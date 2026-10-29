@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piston Origins</title>
+<meta name="description" content="Every legendary car has an origin story. Piston Origins tells it: weekly car-history documentaries and 60-second car secrets, with every source listed.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Intro: rev to redline -->
+<div id="loader" aria-hidden="true">
+  <div class="ld-inner">
+    <svg viewBox="0 0 200 120" class="ld-tach">
+      <path class="tach-arc" d="M20 110 A80 80 0 0 1 180 110"/>
+      <path class="tach-red" d="M154 53 A80 80 0 0 1 180 110"/>
+      <line class="needle" x1="100" y1="110" x2="100" y2="40"/>
+      <circle cx="100" cy="110" r="5"/>
+    </svg>
+    <div class="ld-rpm mono"><span id="rpm">0</span> r/min</div>
+    <div class="ld-name">Piston Origins</div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="redline" aria-hidden="true"><span id="progress"></span></div>
+
+<header class="nav">
+  <a href="#top" class="brand">
+    <img src="assets/logo.png" alt="" width="32" height="32">
+    <span>Piston Origins</span>
+  </a>
+  <nav>
+    <a href="#stories">Stories</a>
+    <a href="#secrets">Secrets</a>
+    <a href="#garage">Garage</a>
+    <a href="#method">Method</a>
+  </nav>
+  <a class="btn btn-sm magnetic" href="https://www.youtube.com/@PistonOrigins?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"><div class="wall" id="wall"></div></div>
+    <div class="hero-inner">
+      <p class="eyebrow mono hero-fade">Car history · JDM legends · Rivalries</p>
+      <h1 class="split">
+        <span class="ln"><span>Every legendary</span></span>
+        <span class="ln"><span>car has an</span></span>
+        <span class="ln"><span><em>origin story.</em></span></span>
+      </h1>
+      <p class="lede hero-fade">We tell it. Where the cars came from, the engines behind them, the rivalries, bans and near-failures, and the secrets most people never hear.</p>
+      <div class="hero-cta hero-fade">
+        <a class="btn magnetic" href="#stories">▶ Watch the stories</a>
+        <a class="btn btn-ghost magnetic" href="https://www.youtube.com/@PistonOrigins" target="_blank" rel="noopener">YouTube channel ↗</a>
+      </div>
+    </div>
+    <div class="scroll-cue mono hero-fade" aria-hidden="true"><span></span>Scroll to start the engine</div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker1"></div>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="statement wrap">
+    <p class="eyebrow mono">01 / What we do</p>
+    <p class="big-words" id="bigWords">We don't do spec sheets. We find the turn in the story: the ban, the insult, the near-failure, the comeback. Then we prove it, with every source listed.</p>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars-sec wrap">
+    <div class="pillars">
+      <article class="pillar tilt">
+        <span class="p-num">01</span>
+        <span class="tag mono">Weekly</span>
+        <h3>The full story</h3>
+        <p>One car, one central question, one turn in the story. The Supra, the R34, the rotary, the NSX: how they were built and why they still matter.</p>
+      </article>
+      <article class="pillar tilt">
+        <span class="p-num">02</span>
+        <span class="tag mono">60 seconds</span>
+        <h3>Car secrets</h3>
+        <p>Shorts with the one true fact most people never hear. Hollow carpet in a Supra. A 276 hp "gentlemen's agreement". An engine only nine people built.</p>
+      </article>
+      <article class="pillar tilt">
+        <span class="p-num">03</span>
+        <span class="tag mono">Every video</span>
+        <h3>Sources, listed</h3>
+        <p>Every claim is checked against a reference sheet and every source goes in the description. If we can't source it, we don't say it.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- STORIES: pinned horizontal run -->
+  <section id="stories" class="hscroll">
+    <div class="h-track" id="hTrack">
+      <div class="h-intro">
+        <p class="eyebrow mono">02 / The full stories</p>
+        <h2>The<br>case<br>files</h2>
+        <p class="muted">Nine stories. Bans, rivalries, rescues. Keep scrolling.</p>
+        <a class="link" href="https://www.youtube.com/@PistonOrigins/videos" target="_blank" rel="noopener">All videos on YouTube ↗</a>
+      </div>
+      <!-- cards injected -->
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-band">
+    <div class="wrap stats">
+      <div><dd data-to="9">0</dd><dt class="mono">Full stories</dt></div>
+      <div><dd data-to="33">0</dd><dt class="mono">Car secrets</dt></div>
+      <div><dd data-to="10">0</dd><dt class="mono">Legends covered</dt></div>
+      <div><dd id="viewsStat" data-to="0" data-suffix="K+">0</dd><dt class="mono">Shorts views</dt></div>
+    </div>
+  </section>
+
+  <!-- SHORTS -->
+  <section id="secrets" class="secrets">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow mono">03 / Car secrets</p>
+          <h2 class="reveal-up">60 seconds.<br><em>One thing you didn't know.</em></h2>
+        </div>
+        <a class="link" href="https://www.youtube.com/@PistonOrigins/shorts" target="_blank" rel="noopener">All Shorts ↗</a>
+      </div>
+      <div id="filters" class="filters" role="tablist"></div>
+    </div>
+    <div class="rail-wrap">
+      <button class="rail-btn prev" aria-label="Scroll left">←</button>
+      <div id="shorts" class="rail"></div>
+      <button class="rail-btn next" aria-label="Scroll right">→</button>
+    </div>
+  </section>
+
+  <div class="ticker ticker-alt" aria-hidden="true">
+    <div class="ticker-track" id="ticker2"></div>
+  </div>
+
+  <!-- GARAGE -->
+  <section id="garage" class="garage wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow mono">04 / The garage</p>
+        <h2 class="reveal-up">Cars and engines<br>we've covered</h2>
+      </div>
+      <p class="muted mono small">Tap a plate to watch its story</p>
+    </div>
+    <div id="plates" class="plates"></div>
+  </section>
+
+  <!-- METHOD -->
+  <section id="method" class="method">
+    <div class="wrap method-grid">
+      <div class="method-left">
+        <p class="eyebrow mono">05 / How an episode is built</p>
+        <h2 class="reveal-up">Real research.<br><em>Honest about the rest.</em></h2>
+        <p class="disclose">Our host and voices are AI-generated. The research, facts and sources are real, and listed in every video description. We'd rather tell you than have you wonder.</p>
+      </div>
+      <ol class="steps" id="steps">
+        <li><span class="mono">01</span><div><h4>Pick the turn</h4><p>A car with a near-failure, a ban, a rescue or a comeback. Never a repeat.</p></div></li>
+        <li><span class="mono">02</span><div><h4>Build the reference sheet</h4><p>Engine code, output by market, key dates and people. Every line gets a source; anything unsourced is cut or softened.</p></div></li>
+        <li><span class="mono">03</span><div><h4>Script and footage</h4><p>Real archive footage first. Licences logged, credits in the description.</p></div></li>
+        <li><span class="mono">04</span><div><h4>Check before upload</h4><p>Facts against sources, pronunciation, sync, sound. Then it ships.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community wrap">
+    <div class="ask">
+      <div class="ask-glow" aria-hidden="true"></div>
+      <p class="eyebrow mono">06 / Your turn</p>
+      <h2>Which car should we cover next?</h2>
+      <p>We pick topics from the comments. Tell us the car, the engine, or the rumour you want settled.</p>
+      <div class="hero-cta">
+        <a class="btn magnetic" href="https://www.youtube.com/@PistonOrigins" target="_blank" rel="noopener">Comment on YouTube</a>
+        <a class="btn btn-ghost magnetic" href="https://www.instagram.com/pistonorigins/" target="_blank" rel="noopener">DM on Instagram ↗</a>
+      </div>
+    </div>
+    <a class="ig tilt" href="https://www.instagram.com/pistonorigins/" target="_blank" rel="noopener">
+      <div class="ig-grid" id="igGrid" aria-hidden="true"></div>
+      <div class="ig-meta">
+        <span class="mono">@pistonorigins</span>
+        <strong>Follow on Instagram</strong>
+        <span>Reels, stills and behind-the-scenes from each story.</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="outro">
+    <p class="outro-word" id="outroWord">Origin<br><em>stories.</em></p>
+    <div class="hero-cta outro-cta">
+      <a class="btn magnetic" href="https://www.youtube.com/@PistonOrigins?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+      <a class="btn btn-ig magnetic" href="https://www.instagram.com/pistonorigins/" target="_blank" rel="noopener">Follow us on Instagram</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot wrap">
+  <div class="brand">
+    <img src="assets/logo.png" alt="" width="28" height="28">
+    <span>Piston Origins</span>
+  </div>
+  <p class="mono small">Every legendary car has an origin story.</p>
+  <nav>
+    <a href="https://www.youtube.com/@PistonOrigins" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.instagram.com/pistonorigins/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+  <p class="small muted">Vehicle names and marks belong to their owners. Piston Origins is an independent channel and is not affiliated with any manufacturer.</p>
+</footer>
+
+<dialog id="player">
+  <button class="close" aria-label="Close">×</button>
+  <div class="frame"></div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
