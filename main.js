@@ -1,65 +1,5 @@
-// Content pulled from youtube.com/@PistonOrigins. Newest first.
-const EPISODES = [
-  { id: "OHUYDjP9DVQ", n: 9, title: "Toyota vs FIA: The Illegal Turbo That Got Them Banned", car: "Celica GT-Four", tag: "Rally" },
-  { id: "YPdVXp1ca0c", n: 8, title: "Ferrari vs Lamborghini: The Insult That Started It All", car: "Lamborghini", tag: "Rivalry" },
-  { id: "u6lgliMatSk", n: 7, title: "Porsche Bought a Nissan to Prove It Cheated. It Backfired.", car: "GT-R R35", tag: "Rivalry" },
-  { id: "NJSd2W415nA", n: 6, title: "Toyota Threw Away 5 Years of Work to Build This Lexus", car: "Lexus LFA", tag: "Origin" },
-  { id: "LjII0wBnJHA", n: 5, title: "Why Ferrari Feared This Honda", car: "Honda NSX", tag: "Origin" },
-  { id: "flQ66uxn0DM", n: 4, title: "The AE86 Wasn't Fast. So Why Is It a Legend?", car: "AE86", tag: "Legend" },
-  { id: "R9jLpyg8-3A", n: 3, title: "Mazda's Rotary Engine Should Never Have Worked", car: "RX-7 & 787B", tag: "Engine" },
-  { id: "_QTVeqC9ARM", n: 2, title: "Why the Skyline GT-R R34 Was Banned in America", car: "Skyline R34", tag: "Ban" },
-  { id: "18hr_2O-4cg", n: 1, title: "The Toyota Supra Mk4: How Toyota Built a Legend", car: "Supra Mk4", tag: "Origin" },
-];
-
-// [id, title, views, make]
-const SHORTS = [
-  ["5ykQZttm47c", "Toyota's 5mm Rally Cheat Erased Its Own Evidence", "125", "Toyota"],
-  ["9E6Utm3EymU", "Lamborghini Sold for $3 Million. Then $110 Million.", "292", "Lamborghini"],
-  ["cRhiMRwTN5E", "A Tractor Company Built This Supercar", "1K", "Lamborghini"],
-  ["WM6R9qzpf44", "Lamborghini's First Car Had No Engine", "1K", "Lamborghini"],
-  ["XE_0LPD8-XI", "Enzo Ferrari Mocked a Tractor Maker. Big Mistake.", "1.2K", "Lamborghini"],
-  ["pLDrefGsOtg", "Only 9 People Ever Built This Engine", "1.4K", "Lexus"],
-  ["z3S1gPWU51g", "This $70K Nissan Embarrassed Porsche", "1.5K", "Nissan"],
-  ["BbuAO2BmedA", "Porsche Was Scared of This $70K Nissan", "1.2K", "Nissan"],
-  ["EcLN9OM8u-4", "Porsche Paid $77,000 to Expose Nissan. It Backfired", "1.2K", "Nissan"],
-  ["sqj8J2LYI9o", "Nissan Told Porsche to Take Driving Lessons", "3.6K", "Nissan"],
-  ["vw1Tkt2-R9I", "Why Honda Built the NSX Like an F-16 Fighter Jet", "1.2K", "Honda"],
-  ["_pI1xDjmBR4", "This $60,000 Supercar Now Sells for $155,000", "700", "Honda"],
-  ["PdQfFF-KN6Q", "Ayrton Senna Called Honda's Supercar \"Fragile\"", "159", "Honda"],
-  ["bpgbDRwNTXg", "The Toyota Engine That Loved to Rev: the 4A-GE", "537", "Toyota"],
-  ["fm3Tq5WR8fk", "The Corolla That Made the Drift King Famous", "961", "Toyota"],
-  ["kn3tZTTS-gw", "Why Is the Toyota AE86 Called the \"86\"?", "152", "Toyota"],
-  ["Zqdk-iFualQ", "Was the Toyota AE86 Actually Fast? Myth or Fact", "129", "Toyota"],
-  ["fBe3nkaKAdA", "This Cheap Corolla Now Sells for $40,000", "1K", "Toyota"],
-  ["46RwhPl4_bo", "This 1993 Toyota Engine Makes 1,000 HP", "1.1K", "Toyota"],
-  ["txshOEi3vDM", "Paul Walker's R34 GT-R Sold for $1.3 Million", "1.3K", "Nissan"],
-  ["iFjWHcsU8Nk", "This Mazda RX-7 Is Worth More Than It Cost New", "1.2K", "Mazda"],
-  ["FGkrFcXQwSQ", "Does Every Rotary Need a Rebuild at 50,000 Miles?", "145", "Mazda"],
-  ["wT5YnKhLHlE", "Mazda's Last Chance at Le Mans: The 787B Story", "1.3K", "Mazda"],
-  ["J6SvnwiotMU", "This Engine Kept Destroying Itself (Devil's Nail Marks)", "265", "Mazda"],
-  ["wRsPy3LiiDw", "This Engine Has No Pistons (How a Rotary Works)", "220", "Mazda"],
-  ["_5NUpGSIjRY", "USA Banned This Nissan Skyline R34 for 25 Years", "40", "Nissan"],
-  ["Ie3tcGUmurM", "This Nissan Had a Display Screen in 1999", "42", "Nissan"],
-  ["jVt6k6vA_Vw", "Godzilla Was Named by Australians?", "56", "Nissan"],
-  ["LjrRBnlZC2g", "Nissan Lied About the R34's Horsepower? (The 276 HP Secret)", "96", "Nissan"],
-  ["QoNAWytQrgw", "What Does \"Supra\" Actually Mean?", "27", "Toyota"],
-  ["XsglmM71UAA", "Why a Mk4 Toyota Supra Sold for $550,000", "681", "Toyota"],
-  ["zhTAJGiXwFQ", "Toyota Used Hollow Carpet to Make the Mk4 Supra Lighter?", "824", "Toyota"],
-  ["O35wjZkQRkY", "2JZ-GTE Explained: The Engine That Made the Supra a Legend", "65", "Toyota"],
-];
-
-const GARAGE = [
-  { name: "Supra Mk4", code: "JZA80", engine: "2JZ-GTE · 3.0 L I6 twin-turbo", era: "1993–2002", ep: "18hr_2O-4cg" },
-  { name: "Skyline GT-R", code: "BNR34", engine: "RB26DETT · 2.6 L I6 twin-turbo", era: "1999–2002", ep: "_QTVeqC9ARM" },
-  { name: "RX-7", code: "FD3S", engine: "13B-REW · twin-rotor, sequential turbo", era: "1992–2002", ep: "R9jLpyg8-3A" },
-  { name: "787B", code: "Le Mans 1991", engine: "R26B · four-rotor", era: "1991", ep: "R9jLpyg8-3A" },
-  { name: "NSX", code: "NA1", engine: "C30A · 3.0 L V6 VTEC", era: "1990–2005", ep: "LjII0wBnJHA" },
-  { name: "Corolla AE86", code: "Levin / Trueno", engine: "4A-GE · 1.6 L I4", era: "1983–1987", ep: "flQ66uxn0DM" },
-  { name: "Lexus LFA", code: "LFA10", engine: "1LR-GUE · 4.8 L V10", era: "2010–2012", ep: "NJSd2W415nA" },
-  { name: "GT-R", code: "R35", engine: "VR38DETT · 3.8 L V6 twin-turbo", era: "2007–", ep: "u6lgliMatSk" },
-  { name: "Celica GT-Four", code: "ST205", engine: "3S-GTE · 2.0 L I4 turbo", era: "1994–1999", ep: "OHUYDjP9DVQ" },
-  { name: "Lamborghini", code: "350 GTV → 350 GT", engine: "3.5 L V12", era: "1963–1966", ep: "YPdVXp1ca0c" },
-];
+// Episodes, Shorts and garage plates are static HTML generated by tools/build.py
+// (so search engines and AI crawlers can read them); this script only adds motion.
 
 const TICKER_1 = ["2JZ-GTE", "RB26DETT", "13B-REW", "4A-GE", "C30A", "1LR-GUE", "VR38DETT", "R26B", "3S-GTE"];
 const TICKER_2 = ["Banned", "Rivalry", "Comeback", "Near-failure", "The insult", "Le Mans 1991", "Godzilla", "Hachi-Roku"];
@@ -67,87 +7,54 @@ const TICKER_2 = ["Banned", "Rivalry", "Comeback", "Near-failure", "The insult",
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const thumb = (id, q = "hqdefault") => `https://i.ytimg.com/vi/${id}/${q}.jpg`;
-const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const pad = n => String(n).padStart(2, "0");
 const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const hasGsap = typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined" && !calm;
 
-/* ---------- Render ---------- */
+/* ---------- Decorative fills ---------- */
 
-const wallIds = [...EPISODES.map(e => e.id), ...SHORTS.slice(0, 6).map(s => s[0])];
+const caseIds = $$(".case[data-vid]").map(c => c.dataset.vid);
+const shortIds = $$(".short[data-play]").map(s => s.dataset.play);
+const wallIds = [...caseIds, ...shortIds.slice(0, 6)];
 $("#wall").innerHTML = [...wallIds, ...wallIds, ...wallIds]
   .map(id => `<img src="${thumb(id, "mqdefault")}" alt="">`).join("");
+$("#igGrid").innerHTML = caseIds.slice(0, 6)
+  .map(id => `<img src="${thumb(id, "mqdefault")}" alt="" loading="lazy">`).join("");
 
 const tickerHTML = words => Array(4).fill(words).flat().map(w => `<span>${w}</span>`).join("");
 $("#ticker1").innerHTML = tickerHTML(TICKER_1);
 $("#ticker2").innerHTML = tickerHTML(TICKER_2);
 
-$("#hTrack").insertAdjacentHTML("beforeend", EPISODES.map((e, i) => `
-  <article class="case${i === 0 ? " latest" : ""}" data-play="${e.id}" tabindex="0">
-    <div class="thumb"><img src="${thumb(e.id, "maxresdefault")}" onerror="this.onerror=null;this.src='${thumb(e.id)}'" alt="" loading="lazy"><span class="play">▶</span></div>
-    <div class="c-body">
-      <span class="c-num">${pad(e.n)}</span>
-      <div class="meta"><b>EP ${pad(e.n)}</b><span>${e.tag}</span><span>${e.car}</span></div>
-      <h3>${esc(e.title)}</h3>
-    </div>
-  </article>`).join(""));
+/* ---------- Shorts: make filters + drag ---------- */
 
-// Shorts rail with make filters
-const makes = ["All", ...new Set(SHORTS.map(s => s[3]))];
-const filters = $("#filters");
 const rail = $("#shorts");
+const shorts = [...rail.querySelectorAll(".short")];
+const filters = $("#filters");
+const makes = ["All", ...new Set(shorts.map(s => s.dataset.make))];
 filters.innerHTML = makes.map((m, i) => {
-  const count = m === "All" ? SHORTS.length : SHORTS.filter(s => s[3] === m).length;
+  const count = m === "All" ? shorts.length : shorts.filter(s => s.dataset.make === m).length;
   return `<button role="tab" aria-selected="${i === 0}" data-make="${m}">${m} <span class="muted">${count}</span></button>`;
 }).join("");
-
-function renderShorts(make) {
-  const list = make === "All" ? SHORTS : SHORTS.filter(s => s[3] === make);
-  rail.innerHTML = list.map(([id, t, v]) => `
-    <article class="short" data-play="${id}" data-vertical tabindex="0">
-      <div class="s-img"><img src="${thumb(id, "oar2")}" onerror="this.onerror=null;this.src='${thumb(id)}'" alt="" loading="lazy" draggable="false"><span class="views">▶ ${v} views</span></div>
-      <p>${esc(t)}</p>
-    </article>`).join("");
-  rail.scrollTo({ left: 0 });
-  if (hasGsap) gsap.from(".short", { y: 60, opacity: 0, duration: .6, stagger: .035, ease: "power3.out", clearProps: "transform,opacity" });
-}
-filters.addEventListener("click", e => {
-  const b = e.target.closest("button");
+filters.addEventListener("click", ev => {
+  const b = ev.target.closest("button");
   if (!b) return;
   filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-selected", x === b));
-  renderShorts(b.dataset.make);
+  const shown = shorts.filter(s => (s.hidden = !(b.dataset.make === "All" || s.dataset.make === b.dataset.make)) === false);
+  rail.scrollTo({ left: 0 });
+  if (hasGsap) gsap.from(shown, { y: 60, opacity: 0, duration: .6, stagger: .035, ease: "power3.out", clearProps: "transform,opacity" });
 });
-renderShorts("All");
 $(".rail-btn.prev").onclick = () => rail.scrollBy({ left: -rail.clientWidth * .8, behavior: "smooth" });
 $(".rail-btn.next").onclick = () => rail.scrollBy({ left: rail.clientWidth * .8, behavior: "smooth" });
 
-// Drag to scroll the Shorts rail
 let drag = null;
-rail.addEventListener("pointerdown", e => { if (e.pointerType === "mouse") drag = { x: e.clientX, left: rail.scrollLeft, moved: false }; });
-addEventListener("pointermove", e => {
+rail.addEventListener("pointerdown", ev => { if (ev.pointerType === "mouse") drag = { x: ev.clientX, left: rail.scrollLeft }; });
+addEventListener("pointermove", ev => {
   if (!drag) return;
-  const dx = e.clientX - drag.x;
-  if (Math.abs(dx) > 5) { drag.moved = true; rail.classList.add("dragging"); }
+  const dx = ev.clientX - drag.x;
+  if (Math.abs(dx) > 5) rail.classList.add("dragging");
   rail.scrollLeft = drag.left - dx;
 });
 addEventListener("pointerup", () => { setTimeout(() => rail.classList.remove("dragging"), 0); drag = null; });
-
-$("#plates").innerHTML = GARAGE.map(g => `
-  <article class="plate tilt" data-play="${g.ep}" tabindex="0">
-    <div class="bg"><img src="${thumb(g.ep, "mqdefault")}" alt="" loading="lazy"></div>
-    <span class="code">${g.code}</span>
-    <h3>${g.name}</h3>
-    <dl><dt>Engine</dt><dd>${g.engine}</dd><dt>Built</dt><dd>${g.era}</dd></dl>
-    <span class="watch">▶ Watch the story</span>
-  </article>`).join("");
-
-$("#igGrid").innerHTML = EPISODES.slice(0, 6)
-  .map(e => `<img src="${thumb(e.id, "mqdefault")}" alt="" loading="lazy">`).join("");
-
-// Total Shorts views, from the (rounded) counts above
-const parseViews = v => v.endsWith("K") ? parseFloat(v) * 1000 : +v;
-const totalK = Math.floor(SHORTS.reduce((a, s) => a + parseViews(s[2]), 0) / 1000);
-$("#viewsStat").dataset.to = totalK;
+rail.addEventListener("dragstart", ev => ev.preventDefault());
 
 // Statement: one span per word
 const big = $("#bigWords");
@@ -166,14 +73,11 @@ function play(id, vertical) {
   dlg.showModal();
   lenis?.stop();
 }
-document.addEventListener("click", e => {
-  if (rail.classList.contains("dragging")) return;
-  const t = e.target.closest("[data-play]");
-  if (t) play(t.dataset.play, t.hasAttribute("data-vertical"));
-});
-document.addEventListener("keydown", e => {
-  const t = e.target.closest?.("[data-play]");
-  if (t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); play(t.dataset.play, t.hasAttribute("data-vertical")); }
+document.addEventListener("click", ev => {
+  const t = ev.target.closest("[data-play]");
+  if (!t) return;
+  ev.preventDefault();
+  if (!rail.classList.contains("dragging")) play(t.dataset.play, t.hasAttribute("data-vertical"));
 });
 dlg.querySelector(".close").onclick = () => dlg.close();
 dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
@@ -208,7 +112,6 @@ const loader = $("#loader");
 if (!hasGsap) {
   loader.remove();
   $$("#bigWords .w").forEach(w => (w.style.opacity = 1));
-  $$("[data-to]").forEach(d => (d.textContent = d.dataset.to + (d.dataset.suffix || "")));
   $("#steps").style.setProperty("--p", 1);
   $$(".steps li").forEach(li => li.classList.add("on"));
 } else {

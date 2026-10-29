@@ -1,0 +1,137 @@
+{
+  "url": "https://pistonorigins.com",
+  "name": "Piston Origins",
+  "tagline": "Every legendary car has an origin story.",
+  "description": "Piston Origins is a car-history YouTube channel telling the origin stories of legendary cars: JDM icons like the Toyota Supra, Nissan Skyline GT-R, Mazda RX-7, Honda NSX and AE86, the engines behind them (2JZ, RB26, rotary, 4A-GE) and the rivalries, bans and comebacks that made them. A new full car story every week, plus 60-second car secrets in Shorts, with every source listed.",
+  "youtube": "https://www.youtube.com/@PistonOrigins",
+  "instagram": "https://www.instagram.com/pistonorigins/",
+  "host": "Skye",
+
+  "faq": [
+    ["What is Piston Origins?", "Piston Origins is a car-history channel on YouTube. Each full episode tells the origin story of one legendary car, such as the Toyota Supra Mk4, Nissan Skyline GT-R R34, Mazda RX-7, Honda NSX or Toyota AE86, and each 60-second Short reveals one little-known fact about a car or engine."],
+    ["Who presents Piston Origins? Is the host real?", "The host, Skye, and the narration voice are AI-generated. The research, facts and sources are real, and every source is listed in the video description and on the episode page on this site."],
+    ["How often does Piston Origins post new videos?", "A new full car story every week, plus 60-second car secrets in YouTube Shorts."],
+    ["Where do Piston Origins' facts come from?", "Each episode is written from a reference sheet in which every fact has a source: manufacturer press material, magazines such as Car and Driver, Top Gear and Hagerty, auction results and reference works. Those sources are listed on each episode page. Anything that cannot be sourced is cut or softened."],
+    ["Which cars has Piston Origins covered?", "Toyota Supra Mk4, Nissan Skyline GT-R R34, Mazda RX-7 and 787B, Toyota AE86, Honda NSX, Lexus LFA, Nissan GT-R R35, Toyota Celica GT-Four ST205, and the Ferrari vs Lamborghini rivalry."],
+    ["Can I suggest a car for Piston Origins to cover?", "Yes. Leave a comment on any Piston Origins video on YouTube or send a message on Instagram (@pistonorigins). Topics are picked from the comments."]
+  ],
+
+  "episodes": [
+    {
+      "id": "OHUYDjP9DVQ", "n": 9, "slug": "toyota-celica-gt-four-1995-wrc-turbo-restrictor", "car": "Toyota Celica GT-Four ST205", "short": "Celica GT-Four", "tag": "Rally", "make": "Toyota",
+      "facts": [["Car", "Toyota Celica GT-Four (ST205)"], ["Engine", "3S-GTE 2.0 L turbo inline-four"], ["Team", "Toyota Team Europe"], ["Season", "1995 World Rally Championship"], ["Where it unravelled", "Rally Catalunya, October 1995"]],
+      "faq": [
+        ["Why was Toyota banned from the 1995 World Rally Championship?", "At Rally Catalunya in October 1995, scrutineers took apart Didier Auriol's Toyota Celica GT-Four ST205 and found that Toyota Team Europe had engineered a way around the mandatory turbo restrictor, letting the engine breathe more air than the rules allowed. Toyota was excluded from the 1995 championship."],
+        ["What did the FIA say about Toyota's turbo cheat?", "FIA president Max Mosley famously praised its ingenuity, calling it the most ingenious thing he had seen in motorsport, even as the team was punished."]
+      ]
+    },
+    {
+      "id": "YPdVXp1ca0c", "n": 8, "slug": "ferrari-vs-lamborghini-origin-story", "car": "Lamborghini 350 GT and Miura", "short": "Lamborghini", "tag": "Rivalry", "make": "Lamborghini",
+      "facts": [["Founder", "Ferruccio Lamborghini (born 1916, near Cento)"], ["Before cars", "Lamborghini Trattori, founded 1948"], ["Company founded", "30 October 1963, Sant'Agata Bolognese"], ["First show car", "350 GTV, Turin 1963, shown without an engine"], ["Breakthrough", "Miura (chassis Turin 1965, car Geneva 1966)"]],
+      "faq": [
+        ["Why did Ferruccio Lamborghini start making cars?", "Ferruccio Lamborghini was a tractor maker who owned Ferraris. When the clutch kept failing he complained to Enzo Ferrari, who, as Ferruccio told the story, said a tractor maker could never handle a Ferrari. Ferruccio decided to build his own grand tourer. His biographer argues the real motive was economic: there was money in high-end cars."],
+        ["Was Lamborghini's first car really shown without an engine?", "Yes. The Lamborghini 350 GTV was displayed at the 1963 Turin Motor Show without an engine. The production 350 GT followed at Geneva in 1964, and 120 were built."],
+        ["Who sells more cars today, Ferrari or Lamborghini?", "In 2025 Lamborghini delivered 10,747 cars and Ferrari shipped 13,640."]
+      ]
+    },
+    {
+      "id": "u6lgliMatSk", "n": 7, "slug": "nissan-gt-r-vs-porsche-911-turbo-nurburgring", "car": "Nissan GT-R R35", "short": "GT-R R35", "tag": "Rivalry", "make": "Nissan",
+      "facts": [["Car", "Nissan GT-R (R35)"], ["Engine", "VR38DETT 3.8 L twin-turbo V6, 480 PS"], ["Chief engineer", "Kazutoshi Mizuno"], ["Nissan's claimed lap", "7:29, Nürburgring Nordschleife"], ["Porsche's test", "GT-R 7:54 vs 911 Turbo 7:38 (2008)"]],
+      "faq": [
+        ["Did Porsche accuse Nissan of cheating with the GT-R?", "Yes. In 2008 Porsche bought a Nissan GT-R, lapped the Nürburgring in 7:54 against Nissan's claimed 7:29, and suggested Nissan had used race tyres. Nissan said the car used standard showroom tyres and suggested Porsche's drivers might benefit from a performance driving course."],
+        ["What is the fastest Nissan GT-R lap of the Nürburgring?", "The GT-R Nismo lapped the Nordschleife in 7:08.679 in 2013, driven by Michael Krumm."]
+      ]
+    },
+    {
+      "id": "NJSd2W415nA", "n": 6, "slug": "lexus-lfa-story", "car": "Lexus LFA", "short": "Lexus LFA", "tag": "Origin", "make": "Lexus",
+      "facts": [["Engine", "1LR-GUE 4.8 L V10, developed with Yamaha"], ["Power", "552 hp"], ["Rev speed", "Idle to 9,000 rpm in 0.6 seconds"], ["Built", "500 cars, Motomachi, Dec 2010 to Dec 2012"], ["Price new", "$375,000"]],
+      "faq": [
+        ["Did Toyota lose money on the Lexus LFA?", "Yes. Toyota sold the Lexus LFA for $375,000 and still lost money on every one of the 500 cars it built by hand between 2010 and 2012. In April 2026 an LFA sold on Bring a Trailer for $1.81 million."],
+        ["Why does the Lexus LFA have a digital rev counter?", "Its 4.8-litre V10 could rev from idle to 9,000 rpm in 0.6 seconds, faster than a mechanical needle could follow, so Lexus fitted a digital rev counter."],
+        ["Why did the Lexus LFA switch from aluminium to carbon fibre?", "After about five years of development on an aluminium body, Toyota restarted the car in carbon-fibre-reinforced plastic to make it lighter and stiffer."]
+      ]
+    },
+    {
+      "id": "LjII0wBnJHA", "n": 5, "slug": "honda-nsx-story", "car": "Honda NSX (NA1)", "short": "Honda NSX", "tag": "Origin", "make": "Honda",
+      "facts": [["Engine", "C30A 3.0 L VTEC V6, titanium connecting rods, 8,000 rpm"], ["Body", "All-aluminium monocoque"], ["Revealed", "1989 Chicago Auto Show (as NS-X)"], ["Built", "1990–2005, Tochigi"], ["Price new (US)", "About $60,000 as the Acura NSX"]],
+      "faq": [
+        ["What did Ayrton Senna say about the Honda NSX?", "Testing a prototype at Suzuka in 1989, Ayrton Senna called the NSX \"fragile\". Honda spent about eight more months developing the car, including at the Nürburgring, and made the chassis around 50% stiffer."],
+        ["What engine does the original Honda NSX have?", "The C30A, a 3.0-litre V6 with VTEC and titanium connecting rods that revs to 8,000 rpm."],
+        ["How much is an original Honda NSX worth?", "The Acura NSX cost about $60,000 new. Good examples now trade around $80,000 to $120,000, and one sold at auction for $155,911."]
+      ]
+    },
+    {
+      "id": "flQ66uxn0DM", "n": 4, "slug": "toyota-ae86-story", "car": "Toyota AE86 Corolla", "short": "AE86", "tag": "Legend", "make": "Toyota",
+      "facts": [["Car", "Toyota Corolla Levin / Sprinter Trueno (AE86)"], ["Engine", "4A-GE 1.6 L twin-cam inline-four"], ["Layout", "Front engine, rear-wheel drive"], ["0–60 mph", "9.5 s (Car and Driver, Corolla GT-S)"], ["US price, 1985", "$11,530 (Corolla GT-S)"]],
+      "faq": [
+        ["Was the Toyota AE86 actually fast?", "No. Car and Driver measured the Corolla GT-S at 9.5 seconds from 0 to 60 mph. Its legend comes from its light, rear-wheel-drive balance and the rev-happy 4A-GE engine, which made it ideal for drifting."],
+        ["Why is the AE86 called Hachi-Roku?", "Hachi-roku is Japanese for \"eight-six\", from the car's AE86 chassis code."],
+        ["What is the \"Takumi tax\"?", "The price premium on AE86s caused by Initial D, whose hero Takumi drives one. A Corolla GT-S that cost $11,530 new in 1985 sold for $40,000 at auction in 2021."]
+      ]
+    },
+    {
+      "id": "R9jLpyg8-3A", "n": 3, "slug": "mazda-rotary-engine-rx-7-787b-story", "car": "Mazda RX-7 and 787B", "short": "RX-7 & 787B", "tag": "Engine", "make": "Mazda",
+      "facts": [["Engine type", "Wankel rotary (no pistons)"], ["Licence", "From NSU, 1961"], ["Le Mans", "Won in 1991 with the four-rotor 787B (R26B)"], ["FD RX-7", "13B-REW twin-rotor, sequential twin-turbo"], ["Comeback", "2023, as a range extender in the MX-30 R-EV"]],
+      "faq": [
+        ["How does a rotary engine work without pistons?", "A Wankel rotary engine uses a triangular rotor spinning inside an oval-like housing. As it turns, the three chambers between the rotor and the housing take in, compress, ignite and exhaust the fuel mixture, so there are no pistons, connecting rods or valves."],
+        ["When did Mazda win Le Mans?", "Mazda won the 24 Hours of Le Mans in 1991 with the four-rotor 787B."],
+        ["Is the Mazda rotary engine still made?", "Yes. Mazda restarted rotary production in 2023, using it as a range-extending generator in the MX-30 R-EV."]
+      ]
+    },
+    {
+      "id": "_QTVeqC9ARM", "n": 2, "slug": "nissan-skyline-gt-r-r34-banned-in-america", "car": "Nissan Skyline GT-R R34", "short": "Skyline R34", "tag": "Ban", "make": "Nissan",
+      "facts": [["Engine", "RB26DETT 2.6 L twin-turbo inline-six"], ["Official output", "276 hp (\"gentlemen's agreement\")"], ["Drivetrain", "ATTESA E-TS Pro AWD, Getrag 6-speed"], ["Revealed", "8 January 1999"], ["Built", "11,578 (1999–2002)"]],
+      "faq": [
+        ["Why was the Nissan Skyline GT-R R34 banned in the USA?", "It was never certified to US federal safety and emissions standards (FMVSS), so it could not be legally sold or imported new. Apart from a small number brought in through the Motorex loophole, Americans had to wait for the 25-year import rule."],
+        ["Is the R34 GT-R legal in the US?", "Under the 25-year rule, each R34 becomes eligible for import 25 years after its build month. The first cars (early 1999 builds) became eligible in 2024, and production ran to 2002."],
+        ["How many R34 GT-Rs were made?", "11,578, between 1999 and 2002."],
+        ["Why is the Nissan GT-R called Godzilla?", "Australia's Wheels magazine nicknamed the R32 GT-R \"Godzilla\", the monster from Japan, after it dominated Australian touring-car racing."]
+      ]
+    },
+    {
+      "id": "18hr_2O-4cg", "n": 1, "slug": "toyota-supra-mk4-story", "car": "Toyota Supra Mk4 (A80)", "short": "Supra Mk4", "tag": "Origin", "make": "Toyota",
+      "facts": [["Engine", "2JZ-GTE 3.0 L sequential twin-turbo inline-six"], ["Chief engineer", "Isao Tsuzuki"], ["Philosophy", "\"Less is more\": weight saved everywhere"], ["Launched", "1993"], ["Ancestor", "1967 Toyota 2000GT"]],
+      "faq": [
+        ["What engine is in the Mk4 Toyota Supra?", "The Mk4 (A80) Supra Turbo uses the 2JZ-GTE, a 3.0-litre inline-six with sequential twin turbochargers, famous for handling huge power with modest upgrades."],
+        ["Who designed the Mk4 Toyota Supra?", "Chief engineer Isao Tsuzuki led the A80 Supra with a \"less is more\" philosophy, cutting weight wherever possible."],
+        ["Why is the Mk4 Supra so expensive?", "Its tuning potential, the 2JZ-GTE engine and its role in Hollywood and tuner culture made the A80 Supra one of the most wanted Japanese cars. One sold for $550,000."]
+      ]
+    }
+  ],
+
+  "shorts": [
+    {"id": "5ykQZttm47c", "make": "Toyota", "ep": "OHUYDjP9DVQ"},
+    {"id": "9E6Utm3EymU", "make": "Lamborghini", "ep": "YPdVXp1ca0c"},
+    {"id": "cRhiMRwTN5E", "make": "Lamborghini", "ep": "YPdVXp1ca0c"},
+    {"id": "WM6R9qzpf44", "make": "Lamborghini", "ep": "YPdVXp1ca0c"},
+    {"id": "XE_0LPD8-XI", "make": "Lamborghini", "ep": "YPdVXp1ca0c"},
+    {"id": "pLDrefGsOtg", "make": "Lexus", "ep": "NJSd2W415nA"},
+    {"id": "z3S1gPWU51g", "make": "Nissan", "ep": "u6lgliMatSk"},
+    {"id": "BbuAO2BmedA", "make": "Nissan", "ep": "u6lgliMatSk"},
+    {"id": "EcLN9OM8u-4", "make": "Nissan", "ep": "u6lgliMatSk"},
+    {"id": "sqj8J2LYI9o", "make": "Nissan", "ep": "u6lgliMatSk"},
+    {"id": "vw1Tkt2-R9I", "make": "Honda", "ep": "LjII0wBnJHA"},
+    {"id": "_pI1xDjmBR4", "make": "Honda", "ep": "LjII0wBnJHA"},
+    {"id": "PdQfFF-KN6Q", "make": "Honda", "ep": "LjII0wBnJHA"},
+    {"id": "bpgbDRwNTXg", "make": "Toyota", "ep": "flQ66uxn0DM"},
+    {"id": "fm3Tq5WR8fk", "make": "Toyota", "ep": "flQ66uxn0DM"},
+    {"id": "kn3tZTTS-gw", "make": "Toyota", "ep": "flQ66uxn0DM"},
+    {"id": "Zqdk-iFualQ", "make": "Toyota", "ep": "flQ66uxn0DM"},
+    {"id": "fBe3nkaKAdA", "make": "Toyota", "ep": "flQ66uxn0DM"},
+    {"id": "46RwhPl4_bo", "make": "Toyota", "ep": "18hr_2O-4cg"},
+    {"id": "txshOEi3vDM", "make": "Nissan", "ep": "_QTVeqC9ARM"},
+    {"id": "iFjWHcsU8Nk", "make": "Mazda", "ep": "R9jLpyg8-3A"},
+    {"id": "FGkrFcXQwSQ", "make": "Mazda", "ep": "R9jLpyg8-3A"},
+    {"id": "wT5YnKhLHlE", "make": "Mazda", "ep": "R9jLpyg8-3A"},
+    {"id": "J6SvnwiotMU", "make": "Mazda", "ep": "R9jLpyg8-3A"},
+    {"id": "wRsPy3LiiDw", "make": "Mazda", "ep": "R9jLpyg8-3A"},
+    {"id": "_5NUpGSIjRY", "make": "Nissan", "ep": "_QTVeqC9ARM"},
+    {"id": "Ie3tcGUmurM", "make": "Nissan", "ep": "_QTVeqC9ARM"},
+    {"id": "jVt6k6vA_Vw", "make": "Nissan", "ep": "_QTVeqC9ARM"},
+    {"id": "LjrRBnlZC2g", "make": "Nissan", "ep": "_QTVeqC9ARM"},
+    {"id": "QoNAWytQrgw", "make": "Toyota", "ep": "18hr_2O-4cg"},
+    {"id": "XsglmM71UAA", "make": "Toyota", "ep": "18hr_2O-4cg"},
+    {"id": "zhTAJGiXwFQ", "make": "Toyota", "ep": "18hr_2O-4cg"},
+    {"id": "O35wjZkQRkY", "make": "Toyota", "ep": "18hr_2O-4cg"}
+  ]
+}

@@ -1,0 +1,505 @@
+# Piston Origins
+
+> Piston Origins is a car-history YouTube channel telling the origin stories of legendary cars: JDM icons like the Toyota Supra, Nissan Skyline GT-R, Mazda RX-7, Honda NSX and AE86, the engines behind them (2JZ, RB26, rotary, 4A-GE) and the rivalries, bans and comebacks that made them. A new full car story every week, plus 60-second car secrets in Shorts, with every source listed.
+
+Piston Origins is on YouTube at https://www.youtube.com/@PistonOrigins and Instagram at https://www.instagram.com/pistonorigins/. The host (Skye) and narration voice are AI-generated; the research, facts and sources are real and listed in every video description and on each episode page below.
+
+## Episodes (full car stories)
+
+- [Toyota Cheated So Well, the FIA Called It Genius](https://pistonorigins.com/episodes/toyota-celica-gt-four-1995-wrc-turbo-restrictor/): How Toyota Team Europe hid an illegal turbo restrictor in the 1995 World Rally Championship, in the Celica GT-Four ST205, and why FIA president Max Mosley called it genius. Toyota was leading both world championships with two rallies left. Then scrutineers at Rally Catalunya took Auriol's car apart.
+- [Ferrari vs Lamborghini: The Insult That Started It All](https://pistonorigins.com/episodes/ferrari-vs-lamborghini-origin-story/): Ferruccio Lamborghini was a tractor maker who drove Ferraris. When the clutch kept failing, he went to Maranello to complain, and Enzo Ferrari supposedly told him he'd never handle a Ferrari. This is the full Lamborghini vs Ferrari origin story.
+- [Porsche Bought a Nissan to Prove It Cheated. It Backfired.](https://pistonorigins.com/episodes/nissan-gt-r-vs-porsche-911-turbo-nurburgring/): In 2008 Porsche bought a Nissan GT-R, flew it to Germany, lapped the Nürburgring and accused Nissan of cheating with race tyres. Nissan's reply: maybe Porsche's drivers needed lessons. This is the full GT-R vs Porsche 911 Turbo story.
+- [Toyota Lost Money on Every Lexus LFA. Owners Didn't.](https://pistonorigins.com/episodes/lexus-lfa-story/): In 2010, Toyota sold the Lexus LFA for $375,000 and still lost money on every single one. Today one has sold for $1.81 million. Here's the full story of Toyota's craziest supercar.
+- [Why Ferrari FEARED This Honda | Honda NSX Story](https://pistonorigins.com/episodes/honda-nsx-story/): The full Honda NSX (Acura NSX) history: how Ayrton Senna called Honda's secret supercar "fragile" at Suzuka in 1989, and how Honda answered with an aluminium body, a VTEC V6 and a chassis 50% stiffer, the car that woke up Ferrari.
+- [The AE86 Wasn't Fast. So Why Is It a Legend?](https://pistonorigins.com/episodes/toyota-ae86-story/): The full Toyota AE86 history: how a slow, cheap 1983 Corolla became the Hachi-Roku legend behind Initial D and drifting. It was never fast, so why does everyone still want one?
+- [Mazda's Rotary Engine Should Never Have Worked (RX-7 & 787B Story)](https://pistonorigins.com/episodes/mazda-rotary-engine-rx-7-787b-story/): The Mazda rotary engine has no pistons. It drinks fuel, burns oil, and nearly bankrupted Mazda, yet it won Le Mans with the 787B and powered the RX-7. So why do people love the rotary so much?
+- [Why the Nissan Skyline GT-R R34 Was Banned in America (Godzilla's Full Story)](https://pistonorigins.com/episodes/nissan-skyline-gt-r-r34-banned-in-america/): Why was the Nissan Skyline GT-R R34 banned in the USA, and is the R34 finally legal to import in 2026? For 25 years Americans could only drive Godzilla in Gran Turismo. This is the complete R34 GT-R history: from the 1969 Hakosuka to the R32 that earned the "Godzilla" nickname, the RB26DETT twin-turbo engine, the 25-year import rule and the $1.357 million Paul Walker R34 auction.
+- [The Toyota Supra Mk4: How Toyota Built a Legend](https://pistonorigins.com/episodes/toyota-supra-mk4-story/): How did a Japanese sports coupe from 1993 become one of the most wanted cars on the planet? From the 1967 Toyota 2000GT to the first Celica Supra, chief engineer Isao Tsuzuki's "less is more" Mk4, and the legendary 2JZ-GTE with its sequential twin turbos, this is the full story of the A80 Toyota Supra.
+
+---
+
+## EP 09: Toyota Cheated So Well, the FIA Called It Genius
+
+URL: https://pistonorigins.com/episodes/toyota-celica-gt-four-1995-wrc-turbo-restrictor/
+Video: https://www.youtube.com/watch?v=OHUYDjP9DVQ
+Published: 2026-10-27 · Length: 5:43 · Subject: Toyota Celica GT-Four ST205
+
+How Toyota Team Europe hid an illegal turbo restrictor in the 1995 World Rally Championship, in the Celica GT-Four ST205, and why FIA president Max Mosley called it genius. Toyota was leading both world championships with two rallies left. Then scrutineers at Rally Catalunya took Auriol's car apart.
+
+### Key facts
+
+- Car: Toyota Celica GT-Four (ST205)
+- Engine: 3S-GTE 2.0 L turbo inline-four
+- Team: Toyota Team Europe
+- Season: 1995 World Rally Championship
+- Where it unravelled: Rally Catalunya, October 1995
+
+### Questions and answers
+
+**Why was Toyota banned from the 1995 World Rally Championship?**
+At Rally Catalunya in October 1995, scrutineers took apart Didier Auriol's Toyota Celica GT-Four ST205 and found that Toyota Team Europe had engineered a way around the mandatory turbo restrictor, letting the engine breathe more air than the rules allowed. Toyota was excluded from the 1995 championship.
+
+**What did the FIA say about Toyota's turbo cheat?**
+FIA president Max Mosley famously praised its ingenuity, calling it the most ingenious thing he had seen in motorsport, even as the team was punished.
+
+### Chapters
+
+- 00:00 October 1995: a perfectly legal car?
+- 00:40 Toyota, the team everyone chased
+- 01:19 The rule: breathe through a straw
+- 01:52 Suspicion in Perth
+- 02:12 Rally Catalunya
+- 02:48 How the 5 mm cheat worked
+- 03:36 The verdict
+- 04:07 "The most ingenious thing I have seen"
+- 04:42 Toyota's comeback
+
+### Sources
+
+- Rallysport (1995), reposted: https://www.tumblr.com/beautifullyengineered/10432626827/bonus-post-1995-wrc-toyotas-illegal-turbo
+- RallySport Magazine, Toyota's darkest hour: https://rallysportmag.com/then-now-memories-of-toyotas-darkest-hour-in-the-wrc/
+- Jalopnik, how the best racing cheat worked: https://jalopnik.com/how-the-best-racing-cheat-of-all-time-worked-1792828060
+- Girardo, Toyota banned from WRC: https://girardo.com/features/motorsport-moments-toyota-banned-from-wrc-for-cheating-impresses-the-fia/
+- DirtFish, 1995 Rally Catalunya: https://dirtfish.com/rally/1995-rewind-sainz-and-subaru-win-as-rallying-loses-in-spain/
+- DirtFish, 1995 Rally Australia: https://dirtfish.com/rally/wrc/1995-rewind-eriksson-shows-mcrae-way-in-australia/
+- Wikipedia, 1995 WRC: https://en.wikipedia.org/wiki/1995_World_Rally_Championship
+- Shannons, Celica GT-Four: https://club.shannons.com.au/club/news/toyota-celica-gt-four-success-and-scandal-of-japans-greatest-rally-car
+- TGR-WRT history: https://tgr-wrt.com/wrc/history/
+- AutoIndustriya, Toyota ties Lancia (Sep 2026): https://www.autoindustriya.com/auto-industry-news/toyota-has-tied-lancia-as-most-successful-wrc-team.html
+- Quotes are as reported in these sources; the Grist line is paraphrased. The cheat diagrams are simplified illustrations.
+
+## EP 08: Ferrari vs Lamborghini: The Insult That Started It All
+
+URL: https://pistonorigins.com/episodes/ferrari-vs-lamborghini-origin-story/
+Video: https://www.youtube.com/watch?v=YPdVXp1ca0c
+Published: 2026-10-24 · Length: 7:44 · Subject: Lamborghini 350 GT and Miura
+
+Ferruccio Lamborghini was a tractor maker who drove Ferraris. When the clutch kept failing, he went to Maranello to complain, and Enzo Ferrari supposedly told him he'd never handle a Ferrari. This is the full Lamborghini vs Ferrari origin story. He built a V12 rival in four months, showed a car with no engine, then shocked the world with the Miura, the car that invented the supercar. Was the insult real, or a story Ferruccio liked to tell? And who actually won: Ferrari or Lamborghini?
+
+### Key facts
+
+- Founder: Ferruccio Lamborghini (born 1916, near Cento)
+- Before cars: Lamborghini Trattori, founded 1948
+- Company founded: 30 October 1963, Sant'Agata Bolognese
+- First show car: 350 GTV, Turin 1963, shown without an engine
+- Breakthrough: Miura (chassis Turin 1965, car Geneva 1966)
+
+### Questions and answers
+
+**Why did Ferruccio Lamborghini start making cars?**
+Ferruccio Lamborghini was a tractor maker who owned Ferraris. When the clutch kept failing he complained to Enzo Ferrari, who, as Ferruccio told the story, said a tractor maker could never handle a Ferrari. Ferruccio decided to build his own grand tourer. His biographer argues the real motive was economic: there was money in high-end cars.
+
+**Was Lamborghini's first car really shown without an engine?**
+Yes. The Lamborghini 350 GTV was displayed at the 1963 Turin Motor Show without an engine. The production 350 GT followed at Geneva in 1964, and 120 were built.
+
+**Who sells more cars today, Ferrari or Lamborghini?**
+In 2025 Lamborghini delivered 10,747 cars and Ferrari shipped 13,640.
+
+### Chapters
+
+- 00:00 The insult that started Lamborghini
+- 00:45 Who was Ferruccio Lamborghini?
+- 01:26 The tractor maker's Ferraris
+- 01:57 "You can't handle a Ferrari"
+- 02:16 Myth or fact?
+- 02:47 A V12 Ferrari rival in four months
+- 03:36 The Miura: the first supercar
+- 04:23 Why a raging bull?
+- 04:57 How Ferrari reacted
+- 05:25 Countach: the poster car
+- 06:03 How Ferruccio lost Lamborghini
+- 06:49 So who won?
+
+### Sources
+
+- Wikipedia, Ferruccio Lamborghini: born 1916 near Cento; WWII mechanic on Rhodes; Lamborghini Trattori (1948); his Ferrari 250 GT coupé, 250 GT SWB and 250 GT 2+2; clutch problems; 1991 Thoroughbred & Classic Cars interview quotes (as Ferruccio told it); biographer's view that the motive was economic
+- Wikipedia, History of Lamborghini: company founded 30 Oct 1963, Sant'Agata Bolognese; Bizzarrini V12 and the refused fee; 350 GTV at Turin 1963 without an engine; 350 GT (Geneva 1964, 120 built); Miura chassis (Turin 1965) and Geneva 1966; Countach LP 500 (1971) and LP400 (1974); 1972/1974 sales to Rossetti and Leimer; 1978 bankruptcy; Mimran (US$3M), Chrysler (~US$25M), Audi (~US$110M)
+- MotorTrend (via LamboCars): Valentino Balboni, Bob Wallace and historian Massimo Delbo on whether the insult happened
+- WhichCar, "Lamborghini Miura turns 50": Dallara, Gandini, Wallace; transverse V12; ~280 km/h; 474 P400, 140 S, 148 SV
+- CAR Magazine, "A load of bulls": the 1962 visit to Don Eduardo Miura's ranch, Taurus, the bull names, Espada 1,227 built, "Countach" meaning
+- Wikipedia, Ferrari Berlinetta Boxer: Enzo's view of mid-engined road cars; 365 GT4 BB (1973)
+- Lamborghini press release / Motor1: 10,747 deliveries in 2025
+- Ferrari FY2025 report (SEC Form 6-K): 13,640 shipments in 2025
+
+## EP 07: Porsche Bought a Nissan to Prove It Cheated. It Backfired.
+
+URL: https://pistonorigins.com/episodes/nissan-gt-r-vs-porsche-911-turbo-nurburgring/
+Video: https://www.youtube.com/watch?v=u6lgliMatSk
+Published: 2026-10-21 · Length: 3:24 · Subject: Nissan GT-R R35
+
+In 2008 Porsche bought a Nissan GT-R, flew it to Germany, lapped the Nürburgring and accused Nissan of cheating with race tyres. Nissan's reply: maybe Porsche's drivers needed lessons. This is the full GT-R vs Porsche 911 Turbo story. The R35 Nissan GT-R cost about half the price of a Porsche 911 Turbo, yet Nissan claimed a 7:29 Nordschleife lap, faster than Porsche's own GT2. Porsche's test came back at 7:54. Here's what Porsche said, what Nissan answered, and how Godzilla kept getting faster, all the way to the GT-R Nismo's 7:08.
+
+### Key facts
+
+- Car: Nissan GT-R (R35)
+- Engine: VR38DETT 3.8 L twin-turbo V6, 480 PS
+- Chief engineer: Kazutoshi Mizuno
+- Nissan's claimed lap: 7:29, Nürburgring Nordschleife
+- Porsche's test: GT-R 7:54 vs 911 Turbo 7:38 (2008)
+
+### Questions and answers
+
+**Did Porsche accuse Nissan of cheating with the GT-R?**
+Yes. In 2008 Porsche bought a Nissan GT-R, lapped the Nürburgring in 7:54 against Nissan's claimed 7:29, and suggested Nissan had used race tyres. Nissan said the car used standard showroom tyres and suggested Porsche's drivers might benefit from a performance driving course.
+
+**What is the fastest Nissan GT-R lap of the Nürburgring?**
+The GT-R Nismo lapped the Nordschleife in 7:08.679 in 2013, driven by Michael Krumm.
+
+### Chapters
+
+- 00:00 Porsche accused Nissan of cheating
+- 00:30 The king: Porsche 911 Turbo
+- 00:43 Godzilla and its hand-built engine
+- 01:12 The 7:29 Nürburgring lap
+- 01:40 Porsche strikes back
+- 02:16 Nissan's savage reply
+- 02:45 Who was right?
+
+### Sources
+
+- Top Gear (Oct 2008): Porsche's test (GT-R 7:54, 911 Turbo 7:38, GT2 7:34), US-spec GT-R ~$77,000, Nissan's 7:29 by Toshio Suzuki, Nissan's response
+- Jalopnik (Sep 30, 2008): Porsche's race-tyre claim; August Achleitner quote (via CarsGuide)
+- Jalopnik (Oct 9, 2008): Nissan statement on run-in procedures and performance driving courses
+- OneShift (Oct 4, 2008): Neil Reeve, Nissan Europe: "absolutely standard tyres which are available to customers in the showroom"
+- Jalopnik: 2009 Nissan GT-R priced at $69,850
+- Motor Authority: 2010 Porsche 911 Turbo from $132,800
+- Wikipedia, Nissan GT-R: Kazutoshi Mizuno, VR38DETT 480 PS, Takumi engine builders, "Godzilla" (Wheels magazine, 1989), later Nordschleife laps (7:26.70, 7:24.22, 7:19.1, GT-R Nismo 7:08.679 with Michael Krumm, 2013)
+
+## EP 06: Toyota Lost Money on Every Lexus LFA. Owners Didn't.
+
+URL: https://pistonorigins.com/episodes/lexus-lfa-story/
+Video: https://www.youtube.com/watch?v=NJSd2W415nA
+Published: 2026-10-19 · Length: 4:22 · Subject: Lexus LFA
+
+In 2010, Toyota sold the Lexus LFA for $375,000 and still lost money on every single one. Today one has sold for $1.81 million. Here's the full story of Toyota's craziest supercar. The 4.8-litre V10 built with Yamaha revved from idle to 9,000 rpm in 0.6 seconds, so fast that a needle couldn't keep up and Lexus fitted a digital rev counter. Toyota threw away five years of work on an aluminium car and started again in carbon fibre, tuned the engine's sound like a musical instrument, chased the Nürburgring, and built only 500 cars by hand.
+
+### Key facts
+
+- Engine: 1LR-GUE 4.8 L V10, developed with Yamaha
+- Power: 552 hp
+- Rev speed: Idle to 9,000 rpm in 0.6 seconds
+- Built: 500 cars, Motomachi, Dec 2010 to Dec 2012
+- Price new: $375,000
+
+### Questions and answers
+
+**Did Toyota lose money on the Lexus LFA?**
+Yes. Toyota sold the Lexus LFA for $375,000 and still lost money on every one of the 500 cars it built by hand between 2010 and 2012. In April 2026 an LFA sold on Bring a Trailer for $1.81 million.
+
+**Why does the Lexus LFA have a digital rev counter?**
+Its 4.8-litre V10 could rev from idle to 9,000 rpm in 0.6 seconds, faster than a mechanical needle could follow, so Lexus fitted a digital rev counter.
+
+**Why did the Lexus LFA switch from aluminium to carbon fibre?**
+After about five years of development on an aluminium body, Toyota restarted the car in carbon-fibre-reinforced plastic to make it lighter and stiffer.
+
+### Chapters
+
+- 00:00 The $375,000 car Toyota lost money on
+- 00:27 A bar in Hokkaido
+- 00:54 An engine too fast for a needle
+- 01:50 Five years of work, thrown away
+- 02:28 The Nürburgring
+- 03:04 The money
+- 03:59 The twist
+
+### Sources
+
+- Car and Driver (2024), review of "LFA: The Roar of an Angel": engine, Yamaha, 552 hp, Akio Toyoda, "Toyota lost money on every car"
+- The Truth About Cars (2012), Bertel Schmitt: Hokkaido bar, Tanahashi and Hattori, aluminium to carbon fibre, Okamoto quote, one car a day, $375,000
+- Lexus Europe newsroom, LFA timeline: Naruse, first prototype, Nordschleife from 2004, production at Motomachi Dec 2010 to Dec 2012, 20 a month, 500 cars, Nürburgring Package 7:14.64 (Aug 2011)
+- Lexus UK, "A closer look inside the LFA's V10": 4.8-litre V10, 9,000 rpm, idle to redline in 0.6 s, digital rev counter
+- Lexus UK media, "Sounds Spectacular": Formula One study, intake chamber modelled on musical instruments, three sound channels into the cabin
+- Toyota Times, sound series: "the roar of an angel"
+- Yamaha news release (Oct 21, 2009): Yamaha acoustic design for the LFA engine
+- Top Gear archive: 0.6 s to redline, UK price
+- Bring a Trailer (Apr 29, 2026): $1,810,000 sale; classic.com market data
+
+## EP 05: Why Ferrari FEARED This Honda | Honda NSX Story
+
+URL: https://pistonorigins.com/episodes/honda-nsx-story/
+Video: https://www.youtube.com/watch?v=LjII0wBnJHA
+Published: 2026-10-14 · Length: 2:44 · Subject: Honda NSX (NA1)
+
+The full Honda NSX (Acura NSX) history: how Ayrton Senna called Honda's secret supercar "fragile" at Suzuka in 1989, and how Honda answered with an aluminium body, a VTEC V6 and a chassis 50% stiffer, the car that woke up Ferrari. From the 1984 Pininfarina HP-X concept and the NS-X reveal at the 1989 Chicago Auto Show, to Senna's test, eight more months of Nürburgring development with Motoharu Kurosawa, the 3.0-litre C30A V6 with titanium connecting rods revving to 8,000 rpm, the hand-built cars from Tochigi, and what a $60,000 Acura NSX is worth today, this is the full NSX story.
+
+### Key facts
+
+- Engine: C30A 3.0 L VTEC V6, titanium connecting rods, 8,000 rpm
+- Body: All-aluminium monocoque
+- Revealed: 1989 Chicago Auto Show (as NS-X)
+- Built: 1990–2005, Tochigi
+- Price new (US): About $60,000 as the Acura NSX
+
+### Questions and answers
+
+**What did Ayrton Senna say about the Honda NSX?**
+Testing a prototype at Suzuka in 1989, Ayrton Senna called the NSX "fragile". Honda spent about eight more months developing the car, including at the Nürburgring, and made the chassis around 50% stiffer.
+
+**What engine does the original Honda NSX have?**
+The C30A, a 3.0-litre V6 with VTEC and titanium connecting rods that revs to 8,000 rpm.
+
+**How much is an original Honda NSX worth?**
+The Acura NSX cost about $60,000 new. Good examples now trade around $80,000 to $120,000, and one sold at auction for $155,911.
+
+### Chapters
+
+- 00:00 Senna's verdict at Suzuka
+- 00:18 Ferrari speed, Honda reliability
+- 00:33 From HP-X concept to NS-X
+- 01:01 Eight months to fix "fragile"
+- 01:42 The NSX reaches America
+- 02:10 From $60,000 to $155,000
+- 02:22 The supercar that changed supercars
+
+### Sources
+
+- Wikipedia: Honda NSX (first generation), HP-X concept, Chicago 1989 reveal, aluminium body, C30A specs, production 1990-2005: https://en.wikipedia.org/wiki/Honda_NSX_(first_generation)
+- Classic Cars: Driving Ayrton Senna's Honda NSX (Senna's Suzuka test, eight months of extra development, 50% stiffer): https://www.classiccarsmagazine.co.uk/blog/features/driving-ayrton-senna-honda-nsx
+- Japanese Nostalgic Car: How Hondas have inspired Gordon Murray (Murray quote): https://japanesenostalgiccar.com/how-hondas-have-inspired-gordon-murray/
+- SlashGear: what an original NSX cost new and what it is worth now ($60,000 new; $80K-$120K today; $155,911 auction sale): https://www.slashgear.com/1937527/acura-honda-nsx-original-price-what-worth-now
+
+## EP 04: The AE86 Wasn't Fast. So Why Is It a Legend?
+
+URL: https://pistonorigins.com/episodes/toyota-ae86-story/
+Video: https://www.youtube.com/watch?v=flQ66uxn0DM
+Published: 2026-10-12 · Length: 5:08 · Subject: Toyota AE86 Corolla
+
+The full Toyota AE86 history: how a slow, cheap 1983 Corolla became the Hachi-Roku legend behind Initial D and drifting. It was never fast, so why does everyone still want one? From Toyota keeping rear-wheel drive when the rest of the Corolla range went front-wheel drive, to the 4A-GE twin-cam that loved to rev, the $11,530 Corolla GT-S, Keiichi Tsuchiya "the Drift King", Initial D and the "Takumi tax", all the way to the 2012 Toyota 86, this is the full AE86 story.
+
+### Key facts
+
+- Car: Toyota Corolla Levin / Sprinter Trueno (AE86)
+- Engine: 4A-GE 1.6 L twin-cam inline-four
+- Layout: Front engine, rear-wheel drive
+- 0–60 mph: 9.5 s (Car and Driver, Corolla GT-S)
+- US price, 1985: $11,530 (Corolla GT-S)
+
+### Questions and answers
+
+**Was the Toyota AE86 actually fast?**
+No. Car and Driver measured the Corolla GT-S at 9.5 seconds from 0 to 60 mph. Its legend comes from its light, rear-wheel-drive balance and the rev-happy 4A-GE engine, which made it ideal for drifting.
+
+**Why is the AE86 called Hachi-Roku?**
+Hachi-roku is Japanese for "eight-six", from the car's AE86 chassis code.
+
+**What is the "Takumi tax"?**
+The price premium on AE86s caused by Initial D, whose hero Takumi drives one. A Corolla GT-S that cost $11,530 new in 1985 sold for $40,000 at auction in 2021.
+
+### Chapters
+
+- 00:00 The legend nobody planned
+- 00:29 A Corolla out of time
+- 01:17 The heart: 4A-GE
+- 02:00 Cheap thrills: the Corolla GT-S
+- 02:20 Myth or Fact: was the AE86 fast?
+- 02:48 Keiichi Tsuchiya, the Drift King
+- 03:32 Initial D
+- 04:02 The Takumi tax
+- 04:25 The legacy: Toyota 86
+
+### Sources
+
+- Toyota: Corolla Levin / Sprinter Trueno (AE86) and 4A-GE history
+- Car and Driver: Toyota Corolla GT-S road test (0-60 mph in 9.5 s)
+- Toyota USA: 1985 Corolla GT-S original price ($11,530)
+- 2021 auction result: 1985 Toyota Corolla GT-S ($40,000)
+- Keiichi Tsuchiya: racing career (All-Japan Touring Car Championship, Le Mans 1999)
+- Initial D by Shuichi Shigeno (Kodansha, 1995)
+- Toyota and Subaru: 2012 Toyota 86 / Subaru BRZ launch
+
+## EP 03: Mazda's Rotary Engine Should Never Have Worked (RX-7 & 787B Story)
+
+URL: https://pistonorigins.com/episodes/mazda-rotary-engine-rx-7-787b-story/
+Video: https://www.youtube.com/watch?v=R9jLpyg8-3A
+Published: 2026-10-06 · Length: 6:24 · Subject: Mazda RX-7 and 787B
+
+The Mazda rotary engine has no pistons. It drinks fuel, burns oil, and nearly bankrupted Mazda, yet it won Le Mans with the 787B and powered the RX-7. So why do people love the rotary so much? From a 1961 license deal with NSU to the "devil's nail marks" on early engines, the Cosmo Sport and the 84-hour Nürburgring marathon, the 1973 oil crisis, the RX-7, the 787B's 1991 Le Mans win, the FD RX-7 and the rotary's 2023 comeback in the MX-30 R-EV, this is the full Mazda rotary story.
+
+### Key facts
+
+- Engine type: Wankel rotary (no pistons)
+- Licence: From NSU, 1961
+- Le Mans: Won in 1991 with the four-rotor 787B (R26B)
+- FD RX-7: 13B-REW twin-rotor, sequential twin-turbo
+- Comeback: 2023, as a range extender in the MX-30 R-EV
+
+### Questions and answers
+
+**How does a rotary engine work without pistons?**
+A Wankel rotary engine uses a triangular rotor spinning inside an oval-like housing. As it turns, the three chambers between the rotor and the housing take in, compress, ignite and exhaust the fuel mixture, so there are no pistons, connecting rods or valves.
+
+**When did Mazda win Le Mans?**
+Mazda won the 24 Hours of Le Mans in 1991 with the four-rotor 787B.
+
+**Is the Mazda rotary engine still made?**
+Yes. Mazda restarted rotary production in 2023, using it as a range-extending generator in the MX-30 R-EV.
+
+### Chapters
+
+- 00:00 The engine with no pistons
+- 00:34 Hiroshima, 1961: the Wankel license
+- 00:54 How a rotary works
+- 01:22 The devil's nail marks
+- 02:00 Cosmo Sport and the 84-hour marathon
+- 02:33 The oil crisis
+- 02:56 The RX-7
+- 03:13 Myth or Fact: rebuilds every 50,000 miles?
+- 03:40 Le Mans 1991: the 787B
+- 04:30 The FD RX-7 and pop culture
+- 05:18 Why it went silent
+- 05:48 The 2023 comeback
+
+### Sources
+
+- Mazda: rotary engine history / 100th anniversary virtual museum
+- Hagerty: Kenichi Yamamoto obituary; FD RX-7 buyer's and collector guide
+- WardsAuto: the rotary engine's life of hard knocks
+- Jalopnik and SlashGear: Mazda 787B and the 1991 Le Mans win
+- evo: Mazda RX-7 (FD) review and history
+- SlashGear: Mazda restarts rotary production (2023)
+
+## EP 02: Why the Nissan Skyline GT-R R34 Was Banned in America (Godzilla's Full Story)
+
+URL: https://pistonorigins.com/episodes/nissan-skyline-gt-r-r34-banned-in-america/
+Video: https://www.youtube.com/watch?v=_QTVeqC9ARM
+Published: 2026-10-05 · Length: 3:42 · Subject: Nissan Skyline GT-R R34
+
+Why was the Nissan Skyline GT-R R34 banned in the USA, and is the R34 finally legal to import in 2026? For 25 years Americans could only drive Godzilla in Gran Turismo. This is the complete R34 GT-R history: from the 1969 Hakosuka to the R32 that earned the "Godzilla" nickname, the RB26DETT twin-turbo engine, the 25-year import rule and the $1.357 million Paul Walker R34 auction. In this episode of Piston Origins:
+
+### Key facts
+
+- Engine: RB26DETT 2.6 L twin-turbo inline-six
+- Official output: 276 hp ("gentlemen's agreement")
+- Drivetrain: ATTESA E-TS Pro AWD, Getrag 6-speed
+- Revealed: 8 January 1999
+- Built: 11,578 (1999–2002)
+
+### Questions and answers
+
+**Why was the Nissan Skyline GT-R R34 banned in the USA?**
+It was never certified to US federal safety and emissions standards (FMVSS), so it could not be legally sold or imported new. Apart from a small number brought in through the Motorex loophole, Americans had to wait for the 25-year import rule.
+
+**Is the R34 GT-R legal in the US?**
+Under the 25-year rule, each R34 becomes eligible for import 25 years after its build month. The first cars (early 1999 builds) became eligible in 2024, and production ran to 2002.
+
+**How many R34 GT-Rs were made?**
+11,578, between 1999 and 2002.
+
+**Why is the Nissan GT-R called Godzilla?**
+Australia's Wheels magazine nicknamed the R32 GT-R "Godzilla", the monster from Japan, after it dominated Australian touring-car racing.
+
+### Chapters
+
+- 0:00 Banned in America
+- 0:23 Where the GT-R began: the Hakosuka
+- 0:55 The R32 and the Godzilla nickname
+- 1:23 The R34 is revealed
+- 1:39 The RB26DETT engine
+- 2:06 A computer on wheels
+- 2:30 Why Americans couldn't buy one
+- 2:50 Rarity and the $1.357M auction
+- 3:14 Godzilla comes to America
+
+### Sources
+
+- Facts from Nissan, Wikipedia, State of Speed and Bonhams auction results.
+
+## EP 01: The Toyota Supra Mk4: How Toyota Built a Legend
+
+URL: https://pistonorigins.com/episodes/toyota-supra-mk4-story/
+Video: https://www.youtube.com/watch?v=18hr_2O-4cg
+Published: 2026-10-04 · Length: 3:34 · Subject: Toyota Supra Mk4 (A80)
+
+How did a Japanese sports coupe from 1993 become one of the most wanted cars on the planet? From the 1967 Toyota 2000GT to the first Celica Supra, chief engineer Isao Tsuzuki's "less is more" Mk4, and the legendary 2JZ-GTE with its sequential twin turbos, this is the full story of the A80 Toyota Supra.
+
+### Key facts
+
+- Engine: 2JZ-GTE 3.0 L sequential twin-turbo inline-six
+- Chief engineer: Isao Tsuzuki
+- Philosophy: "Less is more": weight saved everywhere
+- Launched: 1993
+- Ancestor: 1967 Toyota 2000GT
+
+### Questions and answers
+
+**What engine is in the Mk4 Toyota Supra?**
+The Mk4 (A80) Supra Turbo uses the 2JZ-GTE, a 3.0-litre inline-six with sequential twin turbochargers, famous for handling huge power with modest upgrades.
+
+**Who designed the Mk4 Toyota Supra?**
+Chief engineer Isao Tsuzuki led the A80 Supra with a "less is more" philosophy, cutting weight wherever possible.
+
+**Why is the Mk4 Supra so expensive?**
+Its tuning potential, the 2JZ-GTE engine and its role in Hollywood and tuner culture made the A80 Supra one of the most wanted Japanese cars. One sold for $550,000.
+
+### Chapters
+
+- 0:00 The legend
+- 0:20 Where the Supra name came from
+- 0:52 Building the Mk4: less is more
+- 1:44 The launch and what fans love
+- 2:08 The 2JZ-GTE engine
+- 2:42 Tuners and Hollywood
+- 3:07 The legacy
+
+### Sources
+
+- Facts from Toyota's 1993 press materials, Car and Driver, Top Gear and Wikipedia.
+
+---
+
+## 60-second car secrets (YouTube Shorts)
+
+- [Toyota's 5mm Rally Cheat Erased Its Own Evidence](https://www.youtube.com/shorts/5ykQZttm47c) (from: Toyota Cheated So Well, the FIA Called It Genius)
+- [Lamborghini Sold for $3 Million. Then $110 Million.](https://www.youtube.com/shorts/9E6Utm3EymU) (from: Ferrari vs Lamborghini: The Insult That Started It All)
+- [A Tractor Company Built This Supercar](https://www.youtube.com/shorts/cRhiMRwTN5E) (from: Ferrari vs Lamborghini: The Insult That Started It All)
+- [Lamborghini's First Car Had No Engine](https://www.youtube.com/shorts/WM6R9qzpf44) (from: Ferrari vs Lamborghini: The Insult That Started It All)
+- [Enzo Ferrari Mocked a Tractor Maker. Big Mistake.](https://www.youtube.com/shorts/XE_0LPD8-XI) (from: Ferrari vs Lamborghini: The Insult That Started It All)
+- [Only 9 People Ever Built This Engine](https://www.youtube.com/shorts/pLDrefGsOtg) (from: Toyota Lost Money on Every Lexus LFA. Owners Didn't.)
+- [This $70K Nissan Embarrassed Porsche](https://www.youtube.com/shorts/z3S1gPWU51g) (from: Porsche Bought a Nissan to Prove It Cheated. It Backfired.)
+- [Porsche Was SCARED of This $70K Nissan](https://www.youtube.com/shorts/BbuAO2BmedA) (from: Porsche Bought a Nissan to Prove It Cheated. It Backfired.)
+- [Porsche Paid $77,000 to Expose Nissan. It Backfired](https://www.youtube.com/shorts/EcLN9OM8u-4) (from: Porsche Bought a Nissan to Prove It Cheated. It Backfired.)
+- [Nissan Told Porsche to Take Driving Lessons](https://www.youtube.com/shorts/sqj8J2LYI9o) (from: Porsche Bought a Nissan to Prove It Cheated. It Backfired.)
+- [Why Honda Built the NSX Like an F-16 Fighter Jet](https://www.youtube.com/shorts/vw1Tkt2-R9I) (from: Why Ferrari FEARED This Honda | Honda NSX Story)
+- [This $60,000 Supercar Now Sells for $155,000](https://www.youtube.com/shorts/_pI1xDjmBR4) (from: Why Ferrari FEARED This Honda | Honda NSX Story)
+- [Ayrton Senna Called Honda's Supercar "FRAGILE"](https://www.youtube.com/shorts/PdQfFF-KN6Q) (from: Why Ferrari FEARED This Honda | Honda NSX Story)
+- [The Toyota Engine That Loved to Rev: the 4A-GE](https://www.youtube.com/shorts/bpgbDRwNTXg) (from: The AE86 Wasn't Fast. So Why Is It a Legend?)
+- [The Corolla That Made the Drift King Famous](https://www.youtube.com/shorts/fm3Tq5WR8fk) (from: The AE86 Wasn't Fast. So Why Is It a Legend?)
+- [Why Is the Toyota AE86 Called the "86"? (Hachi-Roku)](https://www.youtube.com/shorts/kn3tZTTS-gw) (from: The AE86 Wasn't Fast. So Why Is It a Legend?)
+- [Was the Toyota AE86 Actually Fast? Myth or Fact](https://www.youtube.com/shorts/Zqdk-iFualQ) (from: The AE86 Wasn't Fast. So Why Is It a Legend?)
+- [This Cheap Corolla Now Sells for $40,000 (The Takumi Tax)](https://www.youtube.com/shorts/fBe3nkaKAdA) (from: The AE86 Wasn't Fast. So Why Is It a Legend?)
+- [This 1993 Toyota Engine Makes 1,000 HP](https://www.youtube.com/shorts/46RwhPl4_bo) (from: The Toyota Supra Mk4: How Toyota Built a Legend)
+- [Paul Walker's R34 GT-R Sold for $1.3 Million](https://www.youtube.com/shorts/txshOEi3vDM) (from: Why the Nissan Skyline GT-R R34 Was Banned in America (Godzilla's Full Story))
+- [This Mazda RX-7 Is Worth More Than It Cost New](https://www.youtube.com/shorts/iFjWHcsU8Nk) (from: Mazda's Rotary Engine Should Never Have Worked (RX-7 & 787B Story))
+- [Does Every Rotary Need a Rebuild at 50,000 Miles? Myth or Fact](https://www.youtube.com/shorts/FGkrFcXQwSQ) (from: Mazda's Rotary Engine Should Never Have Worked (RX-7 & 787B Story))
+- [Mazda's LAST CHANCE at Le Mans: The 787B Story](https://www.youtube.com/shorts/wT5YnKhLHlE) (from: Mazda's Rotary Engine Should Never Have Worked (RX-7 & 787B Story))
+- [This Engine Kept DESTROYING Itself (Mazda's Devil's Nail Marks)](https://www.youtube.com/shorts/J6SvnwiotMU) (from: Mazda's Rotary Engine Should Never Have Worked (RX-7 & 787B Story))
+- [This Engine Has NO PISTONS (How a Rotary Works)](https://www.youtube.com/shorts/wRsPy3LiiDw) (from: Mazda's Rotary Engine Should Never Have Worked (RX-7 & 787B Story))
+- [USA BANNED this Nissan Skyline R34 for 25 Years](https://www.youtube.com/shorts/_5NUpGSIjRY) (from: Why the Nissan Skyline GT-R R34 Was Banned in America (Godzilla's Full Story))
+- [Wow this Nissan car had a Display Screen in 1999.](https://www.youtube.com/shorts/Ie3tcGUmurM) (from: Why the Nissan Skyline GT-R R34 Was Banned in America (Godzilla's Full Story))
+- [Godzilla Was Named by AUSTRALIANS?! Why the Nissan GT-R Is Called Godzilla](https://www.youtube.com/shorts/jVt6k6vA_Vw) (from: Why the Nissan Skyline GT-R R34 Was Banned in America (Godzilla's Full Story))
+- [Nissan LIED About the R34 GT-R's Horsepower?! (The 276 HP Secret)](https://www.youtube.com/shorts/LjrRBnlZC2g) (from: Why the Nissan Skyline GT-R R34 Was Banned in America (Godzilla's Full Story))
+- [What Does "Supra" Actually Mean? Toyota Supra History](https://www.youtube.com/shorts/QoNAWytQrgw) (from: The Toyota Supra Mk4: How Toyota Built a Legend)
+- [Why a Mk4 Toyota Supra Sold for $550,000](https://www.youtube.com/shorts/XsglmM71UAA) (from: The Toyota Supra Mk4: How Toyota Built a Legend)
+- [Toyota Used HOLLOW Carpet to Make the Mk4 Supra Lighter?!](https://www.youtube.com/shorts/zhTAJGiXwFQ) (from: The Toyota Supra Mk4: How Toyota Built a Legend)
+- [2JZ-GTE Explained: The Engine That Made the Toyota Supra a Legend](https://www.youtube.com/shorts/O35wjZkQRkY) (from: The Toyota Supra Mk4: How Toyota Built a Legend)
+
+## FAQ
+
+**What is Piston Origins?**
+Piston Origins is a car-history channel on YouTube. Each full episode tells the origin story of one legendary car, such as the Toyota Supra Mk4, Nissan Skyline GT-R R34, Mazda RX-7, Honda NSX or Toyota AE86, and each 60-second Short reveals one little-known fact about a car or engine.
+
+**Who presents Piston Origins? Is the host real?**
+The host, Skye, and the narration voice are AI-generated. The research, facts and sources are real, and every source is listed in the video description and on the episode page on this site.
+
+**How often does Piston Origins post new videos?**
+A new full car story every week, plus 60-second car secrets in YouTube Shorts.
+
+**Where do Piston Origins' facts come from?**
+Each episode is written from a reference sheet in which every fact has a source: manufacturer press material, magazines such as Car and Driver, Top Gear and Hagerty, auction results and reference works. Those sources are listed on each episode page. Anything that cannot be sourced is cut or softened.
+
+**Which cars has Piston Origins covered?**
+Toyota Supra Mk4, Nissan Skyline GT-R R34, Mazda RX-7 and 787B, Toyota AE86, Honda NSX, Lexus LFA, Nissan GT-R R35, Toyota Celica GT-Four ST205, and the Ferrari vs Lamborghini rivalry.
+
+**Can I suggest a car for Piston Origins to cover?**
+Yes. Leave a comment on any Piston Origins video on YouTube or send a message on Instagram (@pistonorigins). Topics are picked from the comments.
+

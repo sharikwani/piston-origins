@@ -1,0 +1,32 @@
+# Piston Origins
+
+> Piston Origins is a car-history YouTube channel telling the origin stories of legendary cars: JDM icons like the Toyota Supra, Nissan Skyline GT-R, Mazda RX-7, Honda NSX and AE86, the engines behind them (2JZ, RB26, rotary, 4A-GE) and the rivalries, bans and comebacks that made them. A new full car story every week, plus 60-second car secrets in Shorts, with every source listed.
+
+Piston Origins is on YouTube at https://www.youtube.com/@PistonOrigins and Instagram at https://www.instagram.com/pistonorigins/. The host (Skye) and narration voice are AI-generated; the research, facts and sources are real and listed in every video description and on each episode page below.
+
+## Episodes (full car stories)
+
+- [Toyota Cheated So Well, the FIA Called It Genius](https://pistonorigins.com/episodes/toyota-celica-gt-four-1995-wrc-turbo-restrictor/): How Toyota Team Europe hid an illegal turbo restrictor in the 1995 World Rally Championship, in the Celica GT-Four ST205, and why FIA president Max Mosley called it genius. Toyota was leading both world championships with two rallies left. Then scrutineers at Rally Catalunya took Auriol's car apart.
+- [Ferrari vs Lamborghini: The Insult That Started It All](https://pistonorigins.com/episodes/ferrari-vs-lamborghini-origin-story/): Ferruccio Lamborghini was a tractor maker who drove Ferraris. When the clutch kept failing, he went to Maranello to complain, and Enzo Ferrari supposedly told him he'd never handle a Ferrari. This is the full Lamborghini vs Ferrari origin story.
+- [Porsche Bought a Nissan to Prove It Cheated. It Backfired.](https://pistonorigins.com/episodes/nissan-gt-r-vs-porsche-911-turbo-nurburgring/): In 2008 Porsche bought a Nissan GT-R, flew it to Germany, lapped the Nürburgring and accused Nissan of cheating with race tyres. Nissan's reply: maybe Porsche's drivers needed lessons. This is the full GT-R vs Porsche 911 Turbo story.
+- [Toyota Lost Money on Every Lexus LFA. Owners Didn't.](https://pistonorigins.com/episodes/lexus-lfa-story/): In 2010, Toyota sold the Lexus LFA for $375,000 and still lost money on every single one. Today one has sold for $1.81 million. Here's the full story of Toyota's craziest supercar.
+- [Why Ferrari FEARED This Honda | Honda NSX Story](https://pistonorigins.com/episodes/honda-nsx-story/): The full Honda NSX (Acura NSX) history: how Ayrton Senna called Honda's secret supercar "fragile" at Suzuka in 1989, and how Honda answered with an aluminium body, a VTEC V6 and a chassis 50% stiffer, the car that woke up Ferrari.
+- [The AE86 Wasn't Fast. So Why Is It a Legend?](https://pistonorigins.com/episodes/toyota-ae86-story/): The full Toyota AE86 history: how a slow, cheap 1983 Corolla became the Hachi-Roku legend behind Initial D and drifting. It was never fast, so why does everyone still want one?
+- [Mazda's Rotary Engine Should Never Have Worked (RX-7 & 787B Story)](https://pistonorigins.com/episodes/mazda-rotary-engine-rx-7-787b-story/): The Mazda rotary engine has no pistons. It drinks fuel, burns oil, and nearly bankrupted Mazda, yet it won Le Mans with the 787B and powered the RX-7. So why do people love the rotary so much?
+- [Why the Nissan Skyline GT-R R34 Was Banned in America (Godzilla's Full Story)](https://pistonorigins.com/episodes/nissan-skyline-gt-r-r34-banned-in-america/): Why was the Nissan Skyline GT-R R34 banned in the USA, and is the R34 finally legal to import in 2026? For 25 years Americans could only drive Godzilla in Gran Turismo. This is the complete R34 GT-R history: from the 1969 Hakosuka to the R32 that earned the "Godzilla" nickname, the RB26DETT twin-turbo engine, the 25-year import rule and the $1.357 million Paul Walker R34 auction.
+- [The Toyota Supra Mk4: How Toyota Built a Legend](https://pistonorigins.com/episodes/toyota-supra-mk4-story/): How did a Japanese sports coupe from 1993 become one of the most wanted cars on the planet? From the 1967 Toyota 2000GT to the first Celica Supra, chief engineer Isao Tsuzuki's "less is more" Mk4, and the legendary 2JZ-GTE with its sequential twin turbos, this is the full story of the A80 Toyota Supra.
+
+## About
+
+- [Home](https://pistonorigins.com/): channel overview, all Shorts and FAQ
+- [All episodes](https://pistonorigins.com/episodes/)
+- [Full text for AI](https://pistonorigins.com/llms-full.txt): every episode's key facts, answers and sources
+
+## FAQ
+
+- **What is Piston Origins?** Piston Origins is a car-history channel on YouTube. Each full episode tells the origin story of one legendary car, such as the Toyota Supra Mk4, Nissan Skyline GT-R R34, Mazda RX-7, Honda NSX or Toyota AE86, and each 60-second Short reveals one little-known fact about a car or engine.
+- **Who presents Piston Origins? Is the host real?** The host, Skye, and the narration voice are AI-generated. The research, facts and sources are real, and every source is listed in the video description and on the episode page on this site.
+- **How often does Piston Origins post new videos?** A new full car story every week, plus 60-second car secrets in YouTube Shorts.
+- **Where do Piston Origins' facts come from?** Each episode is written from a reference sheet in which every fact has a source: manufacturer press material, magazines such as Car and Driver, Top Gear and Hagerty, auction results and reference works. Those sources are listed on each episode page. Anything that cannot be sourced is cut or softened.
+- **Which cars has Piston Origins covered?** Toyota Supra Mk4, Nissan Skyline GT-R R34, Mazda RX-7 and 787B, Toyota AE86, Honda NSX, Lexus LFA, Nissan GT-R R35, Toyota Celica GT-Four ST205, and the Ferrari vs Lamborghini rivalry.
+- **Can I suggest a car for Piston Origins to cover?** Yes. Leave a comment on any Piston Origins video on YouTube or send a message on Instagram (@pistonorigins). Topics are picked from the comments.
