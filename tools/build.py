@@ -3,7 +3,8 @@
     python tools/fetch_youtube.py   # refresh titles, dates, descriptions (optional)
     python tools/build.py           # rebuild pages, schema, sitemap, llms.txt
 
-Writes: index.html (between <!--build:x--> markers), episodes/**, sitemap.xml,
+Writes: index.html (between <!--build:x--> markers), episodes/**, engines/** and glossary/
+(from data/articles, data/guides), sitemap.xml,
 robots.txt, llms.txt, llms-full.txt.
 """
 import html
@@ -134,6 +135,106 @@ def lede_text(lede):
     return " ".join(l for lines in lede[:1] for l in lines if not l.startswith("- ")).strip()
 
 
+def load_article(slug):
+    """data/articles/<slug>.md: 'title:' and 'description:' lines, '---', then ## headings and paragraphs."""
+    f = ROOT / "data/articles" / f"{slug}.md"
+    if not f.exists():
+        return None
+    meta_part, _, body = f.read_text(encoding="utf-8").partition("\n---\n")
+    meta = dict(l.split(":", 1) for l in meta_part.strip().splitlines() if ":" in l)
+    blocks, sections, plain, words = [], [], [], 0
+    for line in body.strip().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith("## "):
+            h = line[3:].strip()
+            sid = re.sub(r"[^a-z0-9]+", "-", h.lower()).strip("-")
+            sections.append((sid, h))
+            blocks.append(f'<h2 id="{sid}">{e(h)}</h2>')
+            plain += ["", f"#### {h}", ""]
+        else:
+            words += len(line.split())
+            blocks.append("<p>" + re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(line)) + "</p>")
+            plain += [line.replace("**", ""), ""]
+    mtime = datetime.fromtimestamp(f.stat().st_mtime, timezone.utc).strftime("%Y-%m-%d")
+    return {"title": meta.get("title", "").strip(), "description": meta.get("description", "").strip(),
+            "html": "\n".join(blocks), "sections": sections, "words": words, "modified": mtime, "plain": plain}
+
+
+def split_meta(path):
+    meta_part, _, body = path.read_text(encoding="utf-8").partition("\n---\n")
+    meta = {k.strip(): v.strip() for k, v in (l.split(":", 1) for l in meta_part.strip().splitlines() if ":" in l)}
+    return meta, body.strip()
+
+
+def md_blocks(body):
+    """## headings + paragraphs -> (html, sections, words, sources). A '## Sources' list is pulled out."""
+    blocks, sections, sources, words, in_src = [], [], [], 0, False
+    for line in body.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith("## "):
+            h = line[3:].strip()
+            in_src = h.lower() == "sources"
+            if in_src:
+                continue
+            sid = re.sub(r"[^a-z0-9]+", "-", h.lower()).strip("-")
+            sections.append((sid, h))
+            blocks.append(f'<h2 id="{sid}">{e(h)}</h2>')
+        elif in_src and line.startswith("- "):
+            sources.append(line[2:].strip())
+        else:
+            words += len(line.split())
+            blocks.append("<p>" + re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(line)) + "</p>")
+    return "\n".join(blocks), sections, words, sources
+
+
+def load_engines():
+    out = []
+    for f in sorted((ROOT / "data/guides/engines").glob("*.md")):
+        meta, body = split_meta(f)
+        html_, sections, words, sources = md_blocks(body)
+        facts = [tuple(x.split("=", 1)) for x in meta.get("facts", "").split("|") if "=" in x]
+        out.append({"slug": f.stem, "title": meta["title"], "description": meta["description"],
+                    "name": meta.get("name", f.stem), "episode": meta.get("episode"),
+                    "facts": [(k.strip(), v.strip()) for k, v in facts], "html": html_, "sections": sections,
+                    "words": words, "sources": sources, "url": f"{BASE}/engines/{f.stem}/",
+                    "modified": datetime.fromtimestamp(f.stat().st_mtime, timezone.utc).strftime("%Y-%m-%d")})
+    return out
+
+
+def load_glossary():
+    f = ROOT / "data/guides/glossary.md"
+    if not f.exists():
+        return None
+    meta, body = split_meta(f)
+    terms = []
+    for chunk in re.split(r"\n(?=## )", body):
+        lines = [l.strip() for l in chunk.strip().splitlines() if l.strip()]
+        if not lines or not lines[0].startswith("## "):
+            continue
+        term = lines[0][3:].strip()
+        defs, srcs, rel = [], [], []
+        for l in lines[1:]:
+            if l.lower().startswith("sources:"):
+                srcs += [x.strip() for x in l.split(":", 1)[1].split(" ; ") if x.strip()]
+            elif l.lower().startswith("related:"):
+                rel += [x.strip() for x in l.split(":", 1)[1].split(",") if x.strip()]
+            else:
+                defs.append(l)
+        terms.append({"term": term, "id": re.sub(r"[^a-z0-9]+", "-", term.lower()).strip("-"),
+                      "defs": defs, "sources": srcs, "related": rel})
+    return {"title": meta["title"], "description": meta["description"], "terms": terms,
+            "modified": datetime.fromtimestamp(f.stat().st_mtime, timezone.utc).strftime("%Y-%m-%d")}
+
+
+def clip(text, n=158):
+    text = re.sub(r"\s+", " ", text).strip()
+    return text if len(text) <= n else text[:n - 1].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+
+
 def jsonld(obj):
     return '<script type="application/ld+json">\n' + json.dumps(obj, ensure_ascii=False, indent=1) + "\n</script>"
 
@@ -164,9 +265,27 @@ for ep in SITE["episodes"]:
     lede, chapters, sources, credits, disclosure = parse_description(y["description"])
     EPISODES.append({**ep, **y, "title": clean_title(y["title"]), "url": f"{BASE}/episodes/{ep['slug']}/",
                      "lede": lede, "chapters": chapters, "sources": sources, "credits": credits,
-                     "disclosure": disclosure, "summary": lede_text(lede)})
+                     "disclosure": disclosure, "summary": lede_text(lede), "article": load_article(ep["slug"])})
 EPISODES.sort(key=lambda x: -x["n"])
 BY_ID = {x["id"]: x for x in EPISODES}
+for x in EPISODES:
+    a = x["article"]
+    x["seo_title"] = (a and a["title"]) or x["title"]
+    x["seo_desc"] = (a and a["description"]) or clip(x["summary"] or x["title"])
+    x["modified"] = max(x["uploadDate"][:10], a["modified"]) if a else x["uploadDate"][:10]
+
+
+ENGINES = load_engines()
+ENGINE_BY_EP = {}
+for g in ENGINES:
+    ENGINE_BY_EP.setdefault(g["episode"], []).append(g)
+GLOSSARY = load_glossary()
+
+
+def related(x, k=3):
+    """Same make first, then same tag, then newest; never itself."""
+    score = lambda y: (y["make"] == x["make"]) * 2 + (y["tag"] == x["tag"])
+    return sorted((y for y in EPISODES if y is not x), key=lambda y: (-score(y), -y["n"]))[:k]
 
 SHORTS = []
 for s in SITE["shorts"]:
@@ -239,7 +358,8 @@ NAV = """<header class="nav">
   <a href="/" class="brand"><img src="/assets/logo.png" alt="Piston Origins logo" width="32" height="32"><span>Piston Origins</span></a>
   <nav aria-label="Main">
     <a href="/episodes/">Episodes</a>
-    <a href="/#secrets">Secrets</a>
+    <a href="/engines/">Engines</a>
+    <a href="/glossary/">Glossary</a>
     <a href="/#garage">Garage</a>
     <a href="/#faq">FAQ</a>
   </nav>
@@ -251,6 +371,8 @@ FOOT = """<footer class="foot wrap">
   <p class="mono small">Every legendary car has an origin story.</p>
   <nav aria-label="Footer">
     <a href="/episodes/">Episodes</a>
+    <a href="/engines/">Engines</a>
+    <a href="/glossary/">Glossary</a>
     <a href="https://www.youtube.com/@PistonOrigins" target="_blank" rel="noopener">YouTube</a>
     <a href="https://www.instagram.com/pistonorigins/" target="_blank" rel="noopener">Instagram</a>
   </nav>
@@ -269,11 +391,12 @@ document.querySelectorAll('.lite-yt').forEach(b => b.addEventListener('click', (
 
 def episode_page(x, prev_ep, next_ep):
     url = x["url"]
-    desc = (x["summary"] or x["title"])[:300]
+    desc = x["seo_desc"]
+    art = x["article"]
     shorts = [s for s in SHORTS if s["ep"] == x["id"]]
     graph = [ORG, {
         "@type": "WebPage", "@id": url, "url": url, "name": x["title"], "isPartOf": {"@id": f"{BASE}/#website"},
-        "primaryImageOfPage": thumb(x["id"]), "datePublished": x["uploadDate"], "dateModified": x["uploadDate"],
+        "primaryImageOfPage": thumb(x["id"]), "datePublished": x["uploadDate"], "dateModified": x["modified"],
         "mainEntity": {"@id": f"{url}#video"}, "breadcrumb": {"@id": f"{url}#breadcrumb"}, "inLanguage": "en",
     }, video_object(x, url), {
         "@type": "BreadcrumbList", "@id": f"{url}#breadcrumb", "itemListElement": [
@@ -281,8 +404,27 @@ def episode_page(x, prev_ep, next_ep):
             {"@type": "ListItem", "position": 2, "name": "Episodes", "item": f"{BASE}/episodes/"},
             {"@type": "ListItem", "position": 3, "name": x["title"], "item": url}]},
     ]
+    if art:
+        graph.append({
+            "@type": "Article", "@id": f"{url}#article", "headline": x["seo_title"], "description": desc,
+            "image": [thumb(x["id"])], "datePublished": x["uploadDate"], "dateModified": x["modified"],
+            "author": {"@id": f"{BASE}/#org"}, "publisher": {"@id": f"{BASE}/#org"},
+            "mainEntityOfPage": {"@id": url}, "about": {"@type": "Thing", "name": x["car"]},
+            "wordCount": art["words"], "articleSection": x["tag"], "inLanguage": "en",
+            "video": {"@id": f"{url}#video"}})
     if x["faq"]:
         graph.append(faq_schema(x["faq"], url))
+    toc = ""
+    if art and len(art["sections"]) > 2:
+        toc = ('<nav class="toc" aria-label="On this page"><h2 class="side-h">On this page</h2><ol>'
+               + "".join(f'<li><a href="#{sid}">{e(h)}</a></li>' for sid, h in art["sections"]) + "</ol></nav>")
+    rel = "".join(f"""
+    <a class="ep-row" href="/episodes/{r['slug']}/">
+      <div class="thumb"><img src="{thumb(r['id'], 'mqdefault')}" alt="{e(r['seo_title'])}" loading="lazy" width="320" height="180"></div>
+      <div><p class="eyebrow mono">EP {pad(r['n'])} · {e(r['tag'])} · {e(r['car'])}</p><h3>{e(r['seo_title'])}</h3></div>
+    </a>""" for r in related(x))
+    sub = f'<p class="ep-sub">Video: <em>{e(x["title"])}</em></p>' if x["seo_title"] != x["title"] else ""
+    article = f'<section class="article">{art["html"]}</section>' if art else ""
     ld = jsonld({"@context": "https://schema.org", "@graph": graph})
 
     date = datetime.fromisoformat(x["uploadDate"]).strftime("%-d %B %Y") if sys.platform != "win32" else \
@@ -301,7 +443,7 @@ def episode_page(x, prev_ep, next_ep):
 
     def ep_link(p, label):
         return (f'<a class="ep-nav-link" href="/episodes/{p["slug"]}/"><span class="mono">{label} · EP {pad(p["n"])}</span>'
-                f'<strong>{e(p["title"])}</strong></a>') if p else "<span></span>"
+                f'<strong>{e(p["seo_title"])}</strong></a>') if p else "<span></span>"
 
     body = f"""
 <body class="ep-page">
@@ -310,7 +452,8 @@ def episode_page(x, prev_ep, next_ep):
   <nav class="crumbs mono" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/episodes/">Episodes</a> / <span>EP {pad(x['n'])}</span></nav>
   <header class="ep-head">
     <p class="eyebrow mono">EP {pad(x['n'])} · {e(x['tag'])} · {e(x['car'])}</p>
-    <h1>{e(x['title'])}</h1>
+    <h1>{e(x['seo_title'])}</h1>
+    {sub}
     <p class="ep-meta mono"><time datetime="{x['uploadDate'][:10]}">{date}</time> · {human_duration(x['seconds'])} · {x['views']:,} views on YouTube</p>
   </header>
 
@@ -325,6 +468,8 @@ def episode_page(x, prev_ep, next_ep):
     <article class="ep-body">
       <section class="ep-lede">{render_lede(x['lede'])}</section>
 
+      {article}
+
       {f'<section><h2>Quick answers</h2>{faq_html(x["faq"])}</section>' if x['faq'] else ''}
 
       {f'<section><h2>Chapters</h2><ol class="chapters">{chapters}</ol></section>' if chapters else ''}
@@ -337,13 +482,17 @@ def episode_page(x, prev_ep, next_ep):
     </article>
 
     <aside class="ep-side">
+      {toc}
       <h2 class="side-h">Key facts</h2>
       <dl class="facts">{facts}</dl>
       <a class="btn" href="https://www.youtube.com/watch?v={x['id']}" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+      {''.join(f'<a class="side-link" href="/engines/{g["slug"]}/">Engine guide: {e(g["name"])} →</a>' for g in ENGINE_BY_EP.get(x['id'], []))}
     </aside>
   </div>
 
   {f'<section class="ep-shorts"><h2>Car secrets from this story</h2><div class="short-grid">{short_cards}</div></section>' if shorts else ''}
+
+  <section class="ep-related"><h2>More car stories</h2><div class="ep-list">{rel}</div></section>
 
   <nav class="ep-nav" aria-label="More episodes">{ep_link(next_ep, 'Next')}{ep_link(prev_ep, 'Previous')}</nav>
 </main>
@@ -351,7 +500,7 @@ def episode_page(x, prev_ep, next_ep):
 {EP_SCRIPT}
 </body>
 </html>"""
-    return head(f"{x['title']} | Piston Origins", desc, url, thumb(x["id"]), ld, "video.episode") + body
+    return head(f"{x['seo_title']} | Piston Origins", desc, url, thumb(x["id"]), ld, "video.episode") + body
 
 
 def episodes_index():
@@ -361,15 +510,15 @@ def episodes_index():
       <div class="thumb"><img src="{thumb(x['id'], 'mqdefault')}" alt="{e(x['title'])}" loading="lazy" width="320" height="180"></div>
       <div>
         <p class="eyebrow mono">EP {pad(x['n'])} · {e(x['tag'])} · {human_duration(x['seconds'])}</p>
-        <h2>{e(x['title'])}</h2>
-        <p class="muted">{e(x['summary'])}</p>
+        <h2>{e(x['seo_title'])}</h2>
+        <p class="muted">{e(x['seo_desc'])}</p>
       </div>
     </a>""" for x in EPISODES)
     ld = jsonld({"@context": "https://schema.org", "@graph": [ORG, {
         "@type": "CollectionPage", "@id": url, "url": url, "name": "Piston Origins episodes",
         "isPartOf": {"@id": f"{BASE}/#website"}, "mainEntity": {"@id": f"{url}#list"}}, {
         "@type": "ItemList", "@id": f"{url}#list", "itemListElement": [
-            {"@type": "ListItem", "position": i + 1, "url": x["url"], "name": x["title"]} for i, x in enumerate(EPISODES)]}]})
+            {"@type": "ListItem", "position": i + 1, "url": x["url"], "name": x["seo_title"]} for i, x in enumerate(EPISODES)]}]})
     desc = "Every Piston Origins car-history episode: Toyota Supra Mk4, Nissan Skyline GT-R R34, Mazda rotary RX-7 and 787B, AE86, Honda NSX, Lexus LFA, GT-R vs Porsche, Ferrari vs Lamborghini and Toyota's 1995 WRC ban."
     return head("Car History Episodes | Piston Origins", desc, url, f"{BASE}/assets/og-image.jpg", ld) + f"""
 <body class="ep-page">
@@ -382,6 +531,143 @@ def episodes_index():
     <p class="ep-meta">The origin stories of legendary cars, the engines behind them, and the rivalries, bans and comebacks that made them. Newest first.</p>
   </header>
   <div class="ep-list">{items}</div>
+</main>
+{FOOT}
+</body>
+</html>"""
+
+
+# ---------- Engine guides & glossary ----------
+
+def crumbs(*parts):
+    items = [("Home", f"{BASE}/")] + list(parts)
+    html_ = " / ".join(f'<a href="{u.replace(BASE, "")}">{e(n)}</a>' if i < len(items) - 1 else f"<span>{e(n)}</span>"
+                       for i, (n, u) in enumerate(items))
+    ld = {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
+    return f'<nav class="crumbs mono" aria-label="Breadcrumb">{html_}</nav>', ld
+
+
+def engine_page(g):
+    url = g["url"]
+    ep = BY_ID.get(g["episode"])
+    nav, bc = crumbs(("Engines", f"{BASE}/engines/"), (g["name"], url))
+    image = thumb(ep["id"]) if ep else f"{BASE}/assets/og-image.jpg"
+    ld = jsonld({"@context": "https://schema.org", "@graph": [ORG, bc, {
+        "@type": "Article", "@id": f"{url}#article", "headline": g["title"], "description": g["description"],
+        "image": [image], "datePublished": g["modified"], "dateModified": g["modified"],
+        "author": {"@id": f"{BASE}/#org"}, "publisher": {"@id": f"{BASE}/#org"}, "mainEntityOfPage": url,
+        "about": {"@type": "Thing", "name": f"{g['name']} engine"}, "wordCount": g["words"], "inLanguage": "en",
+        "citation": [URL.search(s).group(0) for s in g["sources"] if URL.search(s)]}]})
+    facts = "".join(f"<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>" for k, v in g["facts"])
+    toc = "".join(f'<li><a href="#{sid}">{e(h)}</a></li>' for sid, h in g["sections"])
+    sources = "".join(f"<li>{source_item(s)}</li>" for s in g["sources"])
+    others = "".join(f'<li><a href="/engines/{o["slug"]}/">{e(o["name"])}</a></li>' for o in ENGINES if o is not g)
+    ep_card = f"""<section class="ep-related"><h2>Watch the story</h2><div class="ep-list">
+    <a class="ep-row" href="/episodes/{ep['slug']}/">
+      <div class="thumb"><img src="{thumb(ep['id'], 'mqdefault')}" alt="{e(ep['seo_title'])}" loading="lazy" width="320" height="180"></div>
+      <div><p class="eyebrow mono">EP {pad(ep['n'])} · {e(ep['car'])}</p><h3>{e(ep['seo_title'])}</h3></div>
+    </a></div></section>""" if ep else ""
+    return head(f"{g['title']} | Piston Origins", g["description"], url, image, ld, "article") + f"""
+<body class="ep-page">
+{NAV}
+<main class="wrap ep-main">
+  {nav}
+  <header class="ep-head">
+    <p class="eyebrow mono">Engine guide</p>
+    <h1>{e(g['title'])}</h1>
+    <p class="ep-meta mono">Updated <time datetime="{g['modified']}">{g['modified']}</time> · {len(g['sources'])} sources</p>
+  </header>
+  <div class="ep-grid guide-grid">
+    <article class="ep-body">
+      <section class="article">{g['html']}</section>
+      {f'<section><h2>Sources</h2><ul class="sources">{sources}</ul></section>' if sources else ''}
+    </article>
+    <aside class="ep-side">
+      <h2 class="side-h">Specs</h2>
+      <dl class="facts">{facts}</dl>
+      {f'<nav class="toc" aria-label="On this page"><h2 class="side-h">On this page</h2><ol>{toc}</ol></nav>' if len(g['sections']) > 2 else ''}
+    </aside>
+  </div>
+  {ep_card}
+  <section class="ep-related"><h2>More engine guides</h2><ul class="chip-list">{others}</ul></section>
+</main>
+{FOOT}
+</body>
+</html>"""
+
+
+def engines_index():
+    url = f"{BASE}/engines/"
+    nav, bc = crumbs(("Engines", url))
+    rows = "".join(f"""
+    <a class="ep-row" href="/engines/{g['slug']}/">
+      <div class="thumb"><img src="{thumb(g['episode'], 'mqdefault')}" alt="{e(g['name'])}" loading="lazy" width="320" height="180"></div>
+      <div><p class="eyebrow mono">Engine guide · {e(dict(g['facts']).get('Layout', ''))}</p><h2>{e(g['name'])}</h2>
+      <p class="muted">{e(g['description'])}</p></div>
+    </a>""" for g in ENGINES)
+    ld = jsonld({"@context": "https://schema.org", "@graph": [ORG, bc, {
+        "@type": "CollectionPage", "@id": url, "url": url, "name": "Engine guides", "isPartOf": {"@id": f"{BASE}/#website"}}, {
+        "@type": "ItemList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "url": g["url"], "name": g["title"]} for i, g in enumerate(ENGINES)]}]})
+    desc = "Sourced guides to legendary car engines: " + ", ".join(g["name"] for g in ENGINES) + ". Specs, history, variants and tuning reputation."
+    return head("Legendary Car Engines: Specs and History Guides | Piston Origins", clip(desc), url,
+                f"{BASE}/assets/og-image.jpg", ld) + f"""
+<body class="ep-page">
+{NAV}
+<main class="wrap ep-main">
+  {nav}
+  <header class="ep-head">
+    <p class="eyebrow mono">{len(ENGINES)} engine guides</p>
+    <h1>Legendary engines</h1>
+    <p class="ep-meta">Specs, history, variants and reputation of the engines behind the cars in our stories. Every guide lists its sources.</p>
+  </header>
+  <div class="ep-list">{rows}</div>
+</main>
+{FOOT}
+</body>
+</html>"""
+
+
+def glossary_page(gl):
+    url = f"{BASE}/glossary/"
+    nav, bc = crumbs(("Glossary", url))
+    slug_to_ep = {x["slug"]: x for x in EPISODES}
+    eng_slugs = {g["slug"]: g for g in ENGINES}
+    jump = "".join(f'<a href="#{t["id"]}">{e(t["term"])}</a>' for t in gl["terms"])
+    items = []
+    for t in gl["terms"]:
+        rel = []
+        for r in t["related"]:
+            if r in slug_to_ep:
+                rel.append(f'<a href="/episodes/{r}/">{e(slug_to_ep[r]["seo_title"])}</a>')
+            elif r in eng_slugs:
+                rel.append(f'<a href="/engines/{r}/">{e(eng_slugs[r]["name"])}</a>')
+        srcs = " · ".join(source_item(s) for s in t["sources"])
+        items.append(f"""
+    <div class="term" id="{t['id']}">
+      <dt><h2>{e(t['term'])}</h2></dt>
+      <dd>{''.join(f'<p>{e(d)}</p>' for d in t['defs'])}
+        {f'<p class="term-rel">Related: {" · ".join(rel)}</p>' if rel else ''}
+        {f'<p class="term-src">Sources: {srcs}</p>' if srcs else ''}</dd>
+    </div>""")
+    ld = jsonld({"@context": "https://schema.org", "@graph": [ORG, bc, {
+        "@type": "DefinedTermSet", "@id": f"{url}#terms", "name": gl["title"], "url": url,
+        "hasDefinedTerm": [{"@type": "DefinedTerm", "@id": f"{url}#{t['id']}", "name": t["term"],
+                            "description": " ".join(t["defs"]), "url": f"{url}#{t['id']}",
+                            "inDefinedTermSet": {"@id": f"{url}#terms"}} for t in gl["terms"]]}]})
+    return head(f"{gl['title']} | Piston Origins", gl["description"], url, f"{BASE}/assets/og-image.jpg", ld) + f"""
+<body class="ep-page">
+{NAV}
+<main class="wrap ep-main">
+  {nav}
+  <header class="ep-head">
+    <p class="eyebrow mono">{len(gl['terms'])} terms</p>
+    <h1>Car glossary</h1>
+    <p class="ep-meta">JDM, engine and motorsport terms explained in plain English, each with its sources.</p>
+  </header>
+  <nav class="jump" aria-label="Terms">{jump}</nav>
+  <dl class="glossary">{''.join(items)}</dl>
 </main>
 {FOOT}
 </body>
@@ -449,10 +735,15 @@ def sitemap():
     latest = max(x["uploadDate"] for x in EPISODES + SHORTS)[:10]
     urls = [f"""  <url><loc>{BASE}/</loc><lastmod>{TODAY}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>""",
             f"""  <url><loc>{BASE}/episodes/</loc><lastmod>{latest}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>"""]
+    if ENGINES:
+        urls.append(f"  <url><loc>{BASE}/engines/</loc><lastmod>{max(g['modified'] for g in ENGINES)}</lastmod><priority>0.8</priority></url>")
+        urls += [f"  <url><loc>{g['url']}</loc><lastmod>{g['modified']}</lastmod><priority>0.8</priority></url>" for g in ENGINES]
+    if GLOSSARY:
+        urls.append(f"  <url><loc>{BASE}/glossary/</loc><lastmod>{GLOSSARY['modified']}</lastmod><priority>0.7</priority></url>")
     for x in EPISODES:
         urls.append(f"""  <url>
     <loc>{x['url']}</loc>
-    <lastmod>{x['uploadDate'][:10]}</lastmod>
+    <lastmod>{x['modified']}</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>{thumb(x['id'])}</video:thumbnail_loc>
@@ -503,7 +794,11 @@ def llms(full=False):
              "and listed in every video description and on each episode page below.", "",
              "## Episodes (full car stories)", ""]
     for x in EPISODES:
-        lines.append(f"- [{x['title']}]({x['url']}): {x['summary']}")
+        lines.append(f"- [{x['seo_title']}]({x['url']}): {x['seo_desc']}")
+    if ENGINES:
+        lines += ["", "## Engine guides", ""] + [f"- [{g['title']}]({g['url']}): {g['description']}" for g in ENGINES]
+    if GLOSSARY:
+        lines += ["", "## Glossary", "", f"- [{GLOSSARY['title']}]({BASE}/glossary/): {GLOSSARY['description']}"]
     if not full:
         lines += ["", "## About", "", f"- [Home]({BASE}/): channel overview, all Shorts and FAQ",
                   f"- [All episodes]({BASE}/episodes/)", f"- [Full text for AI]({BASE}/llms-full.txt): every episode's key facts, answers and sources",
@@ -517,6 +812,8 @@ def llms(full=False):
                   f"Published: {x['uploadDate'][:10]} · Length: {human_duration(x['seconds'])} · Subject: {x['car']}", "",
                   " ".join(" ".join(l for l in p if not l.startswith('- ')) for p in x["lede"]), "", "### Key facts", ""]
         lines += [f"- {k}: {v}" for k, v in x["facts"]]
+        if x["article"]:
+            lines += ["", "### The story"] + x["article"]["plain"]
         if x["faq"]:
             lines += ["", "### Questions and answers", ""]
             for q, a in x["faq"]:
@@ -549,11 +846,20 @@ def main():
         d.mkdir(exist_ok=True)
         (d / "index.html").write_text(episode_page(x, older, newer), encoding="utf-8")
 
+    if ENGINES:
+        (ROOT / "engines").mkdir(exist_ok=True)
+        (ROOT / "engines/index.html").write_text(engines_index(), encoding="utf-8")
+        for g in ENGINES:
+            (ROOT / "engines" / g["slug"]).mkdir(exist_ok=True)
+            (ROOT / "engines" / g["slug"] / "index.html").write_text(engine_page(g), encoding="utf-8")
+    if GLOSSARY:
+        (ROOT / "glossary").mkdir(exist_ok=True)
+        (ROOT / "glossary/index.html").write_text(glossary_page(GLOSSARY), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (ROOT / "robots.txt").write_text(ROBOTS, encoding="utf-8")
     (ROOT / "llms.txt").write_text(llms(), encoding="utf-8")
     (ROOT / "llms-full.txt").write_text(llms(full=True), encoding="utf-8")
-    print(f"Built home, {len(EPISODES)} episode pages, episodes index, sitemap, robots, llms.txt")
+    print(f"Built home, {len(EPISODES)} episode pages, {len(ENGINES)} engine guides, glossary={bool(GLOSSARY)}, sitemap, robots, llms.txt")
 
 
 if __name__ == "__main__":

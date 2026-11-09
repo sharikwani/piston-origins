@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  <url><loc>https://pistonorigins.com/</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://pistonorigins.com/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://pistonorigins.com/episodes/</loc><lastmod>2026-10-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/13b-rew-rotary/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/1lr-gue/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/2jz-gte/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/3s-gte/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/4a-ge/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/c30a/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/rb26dett/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/engines/vr38dett/</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://pistonorigins.com/glossary/</loc><lastmod>2026-11-09</lastmod><priority>0.7</priority></url>
   <url>
     <loc>https://pistonorigins.com/episodes/toyota-celica-gt-four-1995-wrc-turbo-restrictor/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/OHUYDjP9DVQ/maxresdefault.jpg</video:thumbnail_loc>
@@ -19,7 +29,7 @@
   </url>
   <url>
     <loc>https://pistonorigins.com/episodes/ferrari-vs-lamborghini-origin-story/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/YPdVXp1ca0c/maxresdefault.jpg</video:thumbnail_loc>
@@ -34,7 +44,7 @@
   </url>
   <url>
     <loc>https://pistonorigins.com/episodes/nissan-gt-r-vs-porsche-911-turbo-nurburgring/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/u6lgliMatSk/maxresdefault.jpg</video:thumbnail_loc>
@@ -49,7 +59,7 @@
   </url>
   <url>
     <loc>https://pistonorigins.com/episodes/lexus-lfa-story/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/NJSd2W415nA/maxresdefault.jpg</video:thumbnail_loc>
@@ -64,7 +74,7 @@
   </url>
   <url>
     <loc>https://pistonorigins.com/episodes/honda-nsx-story/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/LjII0wBnJHA/maxresdefault.jpg</video:thumbnail_loc>
@@ -79,7 +89,7 @@
   </url>
   <url>
     <loc>https://pistonorigins.com/episodes/toyota-ae86-story/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/flQ66uxn0DM/maxresdefault.jpg</video:thumbnail_loc>
@@ -94,7 +104,7 @@
   </url>
   <url>
     <loc>https://pistonorigins.com/episodes/mazda-rotary-engine-rx-7-787b-story/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/R9jLpyg8-3A/maxresdefault.jpg</video:thumbnail_loc>
@@ -109,7 +119,7 @@
   </url>
   <url>
     <loc>https://pistonorigins.com/episodes/nissan-skyline-gt-r-r34-banned-in-america/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/_QTVeqC9ARM/maxresdefault.jpg</video:thumbnail_loc>
@@ -124,7 +134,7 @@
   </url>
   <url>
     <loc>https://pistonorigins.com/episodes/toyota-supra-mk4-story/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.9</priority>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/18hr_2O-4cg/maxresdefault.jpg</video:thumbnail_loc>
