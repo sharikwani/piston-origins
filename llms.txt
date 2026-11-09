@@ -16,7 +16,7 @@ Piston Origins is on YouTube at https://www.youtube.com/@PistonOrigins and Insta
 - [Why the Nissan Skyline GT-R R34 Was Banned in the US](https://pistonorigins.com/episodes/nissan-skyline-gt-r-r34-banned-in-america/): Why the Nissan Skyline GT-R R34 was banned in the US: the RB26DETT, FMVSS rules, the Motorex loophole, the 25-year rule and the $1.357m Paul Walker car.
 - [Toyota Supra Mk4 (A80) History: The 2JZ and How It Was Built](https://pistonorigins.com/episodes/toyota-supra-mk4-story/): Toyota Supra Mk4 (A80) history: from the 2000GT and Celica Supra to Isao Tsuzuki's "less is more" design, the 2JZ-GTE sequential twin-turbo and its legacy.
 
-## Engine guides
+## Legendary engines
 
 - [13B-REW Rotary Engine: Specs, Apex Seals and Problems](https://pistonorigins.com/engines/13b-rew-rotary/): 13B-REW and Mazda 13B rotary explained: specs, sequential twin turbos, FD RX-7 history, apex seal failures, known problems and realistic tuning limits.
 - [Lexus LFA Engine: The Yamaha-Built 1LR-GUE V10 Explained](https://pistonorigins.com/engines/1lr-gue/): The Lexus LFA's 1LR-GUE V10: 4.8 litres, 9,000 rpm and idle to redline in 0.6 seconds. Specs, Yamaha's role, design details and what LFAs sell for today.
@@ -26,6 +26,24 @@ Piston Origins is on YouTube at https://www.youtube.com/@PistonOrigins and Insta
 - [Honda C30A Engine: The NSX's VTEC V6, Specs and History](https://pistonorigins.com/engines/c30a/): Honda C30A specs and history: the 3.0-litre VTEC V6 with titanium connecting rods that powered the original NSX, how it was designed and where it is weak.
 - [RB26DETT Engine: Specs, History and RB26 vs 2JZ](https://pistonorigins.com/engines/rb26dett/): RB26DETT specs, history and weaknesses: the Skyline GT-R's 2.6-litre twin-turbo six built for Group A racing, tuning limits and how it compares to the 2JZ.
 - [Nissan VR38DETT: The Hand-Built GT-R Engine, Specs and History](https://pistonorigins.com/engines/vr38dett/): Nissan VR38DETT specs and history: the R35 GT-R's 3.8-litre twin-turbo V6, hand-built by takumi at Yokohama, its power from 480 to 600 PS and how it tunes.
+
+## Legendary cars
+
+- [Honda NSX NA1 Buyer's Guide: Specs, Type R, Problems, Values](https://pistonorigins.com/cars/honda-nsx-na1/): Honda/Acura NSX NA1 and NA2 guide: specs, NSX-T, Type R, Type S and Zanardi Edition, production numbers, common problems and what an NSX is worth today.
+- [Lamborghini Miura Buyer's Guide: P400, S and SV Specs, Values](https://pistonorigins.com/cars/lamborghini-miura/): Lamborghini Miura guide: P400, P400 S and SV specs, how many were made, the Jota and SVJ, shared-sump and rust problems, and what Miuras sell for at auction.
+- [Lexus LFA Buyer's Guide: Specs, Nürburgring Package, Values](https://pistonorigins.com/cars/lexus-lfa/): Lexus LFA guide: V10 specs, the Nürburgring Package, how many were built, what to check when buying, running costs, and what LFAs sell for at auction today.
+- [Mazda RX-7 FD (FD3S) Buyer's Guide: Specs, Problems, Values](https://pistonorigins.com/cars/mazda-rx-7-fd3s/): Mazda RX-7 FD (FD3S) buyer's guide: specs by series, Type R, Bathurst and Spirit R editions, how many were made, rotary problems, auction prices and imports.
+- [Nissan GT-R R35 Buyer's Guide: Specs, Nismo, T-spec, Values](https://pistonorigins.com/cars/nissan-gt-r-r35/): Nissan GT-R R35 guide, 2007–2025: specs and model-year updates, Track Edition, Nismo and T-spec, gearbox and bellhousing faults, and what R35s sell for today.
+- [Nissan Skyline GT-R R34 Buyer's Guide: Specs, Variants, Values](https://pistonorigins.com/cars/nissan-skyline-gt-r-r34/): R34 Skyline GT-R (BNR34) buyer's guide: specs, V-Spec, M-Spec and Nür variants, production numbers, known problems, auction results and US import rules.
+- [Toyota AE86 Buyer's Guide: Specs, Trims, Rust and Values](https://pistonorigins.com/cars/toyota-ae86/): Toyota AE86 Corolla Levin and Sprinter Trueno guide: specs, GT, GTV and GT-APEX trims, US GT-S, rust and AE85 fakes to watch for, and auction prices today.
+- [Toyota Celica GT-Four ST205 Buyer's Guide: Specs and Values](https://pistonorigins.com/cars/toyota-celica-gt-four-st205/): Toyota Celica GT-Four ST205 guide: 3S-GTE specs, the WRC homologation edition, how it differs from the ST165 and ST185, Super Strut faults and auction values.
+- [Toyota Supra Mk4 (A80) Buyer's Guide: Specs, Values, Problems](https://pistonorigins.com/cars/toyota-supra-mk4-a80/): Toyota Supra Mk4 (A80) buyer's guide: specs by market, trims and special editions, UK and US numbers, common problems, auction results and import rules.
+
+## Head-to-head comparisons
+
+- [2JZ vs RB26: Which Twin-Turbo Inline-Six Is Better?](https://pistonorigins.com/compare/2jz-vs-rb26/): 2JZ-GTE vs RB26DETT compared: design, block and head, turbos, factory output, how strong tuners rate them, parts supply and which suits your build.
+- [Nissan GT-R R35 vs Porsche 911 Turbo: Specs, Prices, Laps](https://pistonorigins.com/compare/nissan-gt-r-r35-vs-porsche-911-turbo/): Nissan GT-R R35 vs Porsche 911 Turbo (997): specs, launch prices, 0-60 times, Nürburgring laps, running costs and how later generations compare.
+- [Supra Mk4 vs R34 Skyline GT-R: Specs, Prices and Legality](https://pistonorigins.com/compare/supra-mk4-vs-skyline-gt-r-r34/): Toyota Supra Mk4 (A80) vs Nissan Skyline GT-R R34: drivetrain, performance, weight, production, prices then and now, US import rules and cultural status.
 
 ## Glossary
 

@@ -3,7 +3,7 @@
     python tools/fetch_youtube.py   # refresh titles, dates, descriptions (optional)
     python tools/build.py           # rebuild pages, schema, sitemap, llms.txt
 
-Writes: index.html (between <!--build:x--> markers), episodes/**, engines/** and glossary/
+Writes: index.html (between <!--build:x--> markers), episodes/**, cars/**, engines/**, compare/** and glossary/
 (from data/articles, data/guides), sitemap.xml,
 robots.txt, llms.txt, llms-full.txt.
 """
@@ -191,16 +191,30 @@ def md_blocks(body):
     return "\n".join(blocks), sections, words, sources
 
 
-def load_engines():
+KINDS = {
+    "engines": {"label": "Engines", "one": "Engine guide", "side": "Specs", "h1": "Legendary engines",
+                "title": "Legendary Car Engines: Specs and History Guides",
+                "intro": "Specs, history, variants and reputation of the engines behind the cars in our stories. Every guide lists its sources."},
+    "cars": {"label": "Cars", "one": "Car guide", "side": "Specs", "h1": "Legendary cars",
+             "title": "Legendary Cars: Specs, Variants, Values and Buying Guides",
+             "intro": "Reference guides to the cars in our stories: specs, variants, production numbers, what to look for and what they are worth. Every guide lists its sources."},
+    "compare": {"label": "Compare", "one": "Comparison", "side": "Head to head", "h1": "Head-to-head comparisons",
+                "title": "Car and Engine Comparisons: Head-to-Head Guides",
+                "intro": "Rivals compared on the facts: design, performance, prices and reputation, with every source listed."},
+}
+
+
+def load_guides(kind):
     out = []
-    for f in sorted((ROOT / "data/guides/engines").glob("*.md")):
+    for f in sorted((ROOT / "data/guides" / kind).glob("*.md")):
         meta, body = split_meta(f)
         html_, sections, words, sources = md_blocks(body)
-        facts = [tuple(x.split("=", 1)) for x in meta.get("facts", "").split("|") if "=" in x]
-        out.append({"slug": f.stem, "title": meta["title"], "description": meta["description"],
-                    "name": meta.get("name", f.stem), "episode": meta.get("episode"),
+        facts = [x.split("=", 1) for x in meta.get("facts", "").split("|") if "=" in x]
+        lst = lambda k: [v.strip() for v in meta.get(k, "").split(",") if v.strip()]
+        out.append({"kind": kind, "slug": f.stem, "title": meta["title"], "description": meta["description"],
+                    "name": meta.get("name", f.stem), "episodes": lst("episode"), "engines": lst("engine"),
                     "facts": [(k.strip(), v.strip()) for k, v in facts], "html": html_, "sections": sections,
-                    "words": words, "sources": sources, "url": f"{BASE}/engines/{f.stem}/",
+                    "words": words, "sources": sources, "url": f"{BASE}/{kind}/{f.stem}/",
                     "modified": datetime.fromtimestamp(f.stat().st_mtime, timezone.utc).strftime("%Y-%m-%d")})
     return out
 
@@ -275,10 +289,20 @@ for x in EPISODES:
     x["modified"] = max(x["uploadDate"][:10], a["modified"]) if a else x["uploadDate"][:10]
 
 
-ENGINES = load_engines()
-ENGINE_BY_EP = {}
+GUIDES = {k: load_guides(k) for k in KINDS}
+ALL_GUIDES = [g for k in KINDS for g in GUIDES[k]]
+ENGINES = GUIDES["engines"]
 for g in ENGINES:
-    ENGINE_BY_EP.setdefault(g["episode"], []).append(g)
+    g["engines"] = [g["slug"]]
+GUIDES_BY_EP = {}
+for g in ALL_GUIDES:
+    for ep_id in g["episodes"]:
+        GUIDES_BY_EP.setdefault(ep_id, []).append(g)
+
+
+def guide_links(g):
+    """Other guides sharing an episode or an engine with g."""
+    return [o for o in ALL_GUIDES if o is not g and (set(o["episodes"]) & set(g["episodes"]) or set(o["engines"]) & set(g["engines"]))]
 GLOSSARY = load_glossary()
 
 
@@ -358,10 +382,10 @@ NAV = """<header class="nav">
   <a href="/" class="brand"><img src="/assets/logo.png" alt="Piston Origins logo" width="32" height="32"><span>Piston Origins</span></a>
   <nav aria-label="Main">
     <a href="/episodes/">Episodes</a>
+    <a href="/cars/">Cars</a>
     <a href="/engines/">Engines</a>
+    <a href="/compare/">Compare</a>
     <a href="/glossary/">Glossary</a>
-    <a href="/#garage">Garage</a>
-    <a href="/#faq">FAQ</a>
   </nav>
   <a class="btn btn-sm" href="https://www.youtube.com/@PistonOrigins?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
 </header>"""
@@ -371,7 +395,9 @@ FOOT = """<footer class="foot wrap">
   <p class="mono small">Every legendary car has an origin story.</p>
   <nav aria-label="Footer">
     <a href="/episodes/">Episodes</a>
+    <a href="/cars/">Cars</a>
     <a href="/engines/">Engines</a>
+    <a href="/compare/">Compare</a>
     <a href="/glossary/">Glossary</a>
     <a href="https://www.youtube.com/@PistonOrigins" target="_blank" rel="noopener">YouTube</a>
     <a href="https://www.instagram.com/pistonorigins/" target="_blank" rel="noopener">Instagram</a>
@@ -486,7 +512,7 @@ def episode_page(x, prev_ep, next_ep):
       <h2 class="side-h">Key facts</h2>
       <dl class="facts">{facts}</dl>
       <a class="btn" href="https://www.youtube.com/watch?v={x['id']}" target="_blank" rel="noopener">Watch on YouTube ↗</a>
-      {''.join(f'<a class="side-link" href="/engines/{g["slug"]}/">Engine guide: {e(g["name"])} →</a>' for g in ENGINE_BY_EP.get(x['id'], []))}
+      {''.join(f'<a class="side-link" href="/{g["kind"]}/{g["slug"]}/">{KINDS[g["kind"]]["one"]}: {e(g["name"])} →</a>' for g in GUIDES_BY_EP.get(x['id'], []))}
     </aside>
   </div>
 
@@ -548,33 +574,43 @@ def crumbs(*parts):
     return f'<nav class="crumbs mono" aria-label="Breadcrumb">{html_}</nav>', ld
 
 
-def engine_page(g):
+def ep_card(ep):
+    return f"""
+    <a class="ep-row" href="/episodes/{ep['slug']}/">
+      <div class="thumb"><img src="{thumb(ep['id'], 'mqdefault')}" alt="{e(ep['seo_title'])}" loading="lazy" width="320" height="180"></div>
+      <div><p class="eyebrow mono">EP {pad(ep['n'])} · {e(ep['car'])}</p><h3>{e(ep['seo_title'])}</h3></div>
+    </a>"""
+
+
+def guide_page(g):
+    k = KINDS[g["kind"]]
     url = g["url"]
-    ep = BY_ID.get(g["episode"])
-    nav, bc = crumbs(("Engines", f"{BASE}/engines/"), (g["name"], url))
-    image = thumb(ep["id"]) if ep else f"{BASE}/assets/og-image.jpg"
+    eps = [BY_ID[i] for i in g["episodes"] if i in BY_ID]
+    nav, bc = crumbs((k["label"], f"{BASE}/{g['kind']}/"), (g["name"], url))
+    image = thumb(eps[0]["id"]) if eps else f"{BASE}/assets/og-image.jpg"
     ld = jsonld({"@context": "https://schema.org", "@graph": [ORG, bc, {
         "@type": "Article", "@id": f"{url}#article", "headline": g["title"], "description": g["description"],
         "image": [image], "datePublished": g["modified"], "dateModified": g["modified"],
         "author": {"@id": f"{BASE}/#org"}, "publisher": {"@id": f"{BASE}/#org"}, "mainEntityOfPage": url,
-        "about": {"@type": "Thing", "name": f"{g['name']} engine"}, "wordCount": g["words"], "inLanguage": "en",
+        "about": {"@type": "Thing", "name": g["name"] + (" engine" if g["kind"] == "engines" else "")},
+        "wordCount": g["words"], "inLanguage": "en",
         "citation": [URL.search(s).group(0) for s in g["sources"] if URL.search(s)]}]})
-    facts = "".join(f"<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>" for k, v in g["facts"])
+    facts = "".join(f"<div><dt>{e(a)}</dt><dd>{e(b)}</dd></div>" for a, b in g["facts"])
     toc = "".join(f'<li><a href="#{sid}">{e(h)}</a></li>' for sid, h in g["sections"])
     sources = "".join(f"<li>{source_item(s)}</li>" for s in g["sources"])
-    others = "".join(f'<li><a href="/engines/{o["slug"]}/">{e(o["name"])}</a></li>' for o in ENGINES if o is not g)
-    ep_card = f"""<section class="ep-related"><h2>Watch the story</h2><div class="ep-list">
-    <a class="ep-row" href="/episodes/{ep['slug']}/">
-      <div class="thumb"><img src="{thumb(ep['id'], 'mqdefault')}" alt="{e(ep['seo_title'])}" loading="lazy" width="320" height="180"></div>
-      <div><p class="eyebrow mono">EP {pad(ep['n'])} · {e(ep['car'])}</p><h3>{e(ep['seo_title'])}</h3></div>
-    </a></div></section>""" if ep else ""
+    linked = guide_links(g)
+    rel = "".join(f'<li><a href="/{o["kind"]}/{o["slug"]}/">{KINDS[o["kind"]]["one"]}: {e(o["name"])}</a></li>' for o in linked)
+    others = "".join(f'<li><a href="/{o["kind"]}/{o["slug"]}/">{e(o["name"])}</a></li>'
+                     for o in GUIDES[g["kind"]] if o is not g and o not in linked)
+    eps_html = (f'<section class="ep-related"><h2>Watch the story</h2><div class="ep-list">'
+                + "".join(ep_card(ep) for ep in eps) + "</div></section>") if eps else ""
     return head(f"{g['title']} | Piston Origins", g["description"], url, image, ld, "article") + f"""
 <body class="ep-page">
 {NAV}
 <main class="wrap ep-main">
   {nav}
   <header class="ep-head">
-    <p class="eyebrow mono">Engine guide</p>
+    <p class="eyebrow mono">{k['one']}</p>
     <h1>{e(g['title'])}</h1>
     <p class="ep-meta mono">Updated <time datetime="{g['modified']}">{g['modified']}</time> · {len(g['sources'])} sources</p>
   </header>
@@ -584,43 +620,45 @@ def engine_page(g):
       {f'<section><h2>Sources</h2><ul class="sources">{sources}</ul></section>' if sources else ''}
     </article>
     <aside class="ep-side">
-      <h2 class="side-h">Specs</h2>
+      <h2 class="side-h">{k['side']}</h2>
       <dl class="facts">{facts}</dl>
       {f'<nav class="toc" aria-label="On this page"><h2 class="side-h">On this page</h2><ol>{toc}</ol></nav>' if len(g['sections']) > 2 else ''}
     </aside>
   </div>
-  {ep_card}
-  <section class="ep-related"><h2>More engine guides</h2><ul class="chip-list">{others}</ul></section>
+  {eps_html}
+  {f'<section class="ep-related"><h2>Related guides</h2><ul class="chip-list">{rel}</ul></section>' if rel else ''}
+  {f'<section class="ep-related"><h2>More {k["label"].lower() if g["kind"] != "compare" else "comparisons"}</h2><ul class="chip-list">{others}</ul></section>' if others else ''}
 </main>
 {FOOT}
 </body>
 </html>"""
 
 
-def engines_index():
-    url = f"{BASE}/engines/"
-    nav, bc = crumbs(("Engines", url))
+def guide_index(kind):
+    k = KINDS[kind]
+    items = GUIDES[kind]
+    url = f"{BASE}/{kind}/"
+    nav, bc = crumbs((k["label"], url))
     rows = "".join(f"""
-    <a class="ep-row" href="/engines/{g['slug']}/">
-      <div class="thumb"><img src="{thumb(g['episode'], 'mqdefault')}" alt="{e(g['name'])}" loading="lazy" width="320" height="180"></div>
-      <div><p class="eyebrow mono">Engine guide · {e(dict(g['facts']).get('Layout', ''))}</p><h2>{e(g['name'])}</h2>
+    <a class="ep-row" href="/{kind}/{g['slug']}/">
+      <div class="thumb"><img src="{thumb(g['episodes'][0], 'mqdefault') if g['episodes'] else '/assets/og-image.jpg'}" alt="{e(g['name'])}" loading="lazy" width="320" height="180"></div>
+      <div><p class="eyebrow mono">{k['one']} · {len(g['sources'])} sources</p><h2>{e(g['name'])}</h2>
       <p class="muted">{e(g['description'])}</p></div>
-    </a>""" for g in ENGINES)
+    </a>""" for g in items)
     ld = jsonld({"@context": "https://schema.org", "@graph": [ORG, bc, {
-        "@type": "CollectionPage", "@id": url, "url": url, "name": "Engine guides", "isPartOf": {"@id": f"{BASE}/#website"}}, {
+        "@type": "CollectionPage", "@id": url, "url": url, "name": k["h1"], "isPartOf": {"@id": f"{BASE}/#website"}}, {
         "@type": "ItemList", "itemListElement": [
-            {"@type": "ListItem", "position": i + 1, "url": g["url"], "name": g["title"]} for i, g in enumerate(ENGINES)]}]})
-    desc = "Sourced guides to legendary car engines: " + ", ".join(g["name"] for g in ENGINES) + ". Specs, history, variants and tuning reputation."
-    return head("Legendary Car Engines: Specs and History Guides | Piston Origins", clip(desc), url,
-                f"{BASE}/assets/og-image.jpg", ld) + f"""
+            {"@type": "ListItem", "position": i + 1, "url": g["url"], "name": g["title"]} for i, g in enumerate(items)]}]})
+    desc = clip(k["intro"].split(".")[0] + ": " + ", ".join(g["name"] for g in items) + ".")
+    return head(f"{k['title']} | Piston Origins", desc, url, f"{BASE}/assets/og-image.jpg", ld) + f"""
 <body class="ep-page">
 {NAV}
 <main class="wrap ep-main">
   {nav}
   <header class="ep-head">
-    <p class="eyebrow mono">{len(ENGINES)} engine guides</p>
-    <h1>Legendary engines</h1>
-    <p class="ep-meta">Specs, history, variants and reputation of the engines behind the cars in our stories. Every guide lists its sources.</p>
+    <p class="eyebrow mono">{len(items)} {k['one'].lower()}s</p>
+    <h1>{k['h1']}</h1>
+    <p class="ep-meta">{k['intro']}</p>
   </header>
   <div class="ep-list">{rows}</div>
 </main>
@@ -633,7 +671,7 @@ def glossary_page(gl):
     url = f"{BASE}/glossary/"
     nav, bc = crumbs(("Glossary", url))
     slug_to_ep = {x["slug"]: x for x in EPISODES}
-    eng_slugs = {g["slug"]: g for g in ENGINES}
+    eng_slugs = {g["slug"]: g for g in ALL_GUIDES}
     jump = "".join(f'<a href="#{t["id"]}">{e(t["term"])}</a>' for t in gl["terms"])
     items = []
     for t in gl["terms"]:
@@ -642,7 +680,7 @@ def glossary_page(gl):
             if r in slug_to_ep:
                 rel.append(f'<a href="/episodes/{r}/">{e(slug_to_ep[r]["seo_title"])}</a>')
             elif r in eng_slugs:
-                rel.append(f'<a href="/engines/{r}/">{e(eng_slugs[r]["name"])}</a>')
+                rel.append(f'<a href="/{eng_slugs[r]["kind"]}/{r}/">{e(eng_slugs[r]["name"])}</a>')
         srcs = " · ".join(source_item(s) for s in t["sources"])
         items.append(f"""
     <div class="term" id="{t['id']}">
@@ -735,9 +773,10 @@ def sitemap():
     latest = max(x["uploadDate"] for x in EPISODES + SHORTS)[:10]
     urls = [f"""  <url><loc>{BASE}/</loc><lastmod>{TODAY}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>""",
             f"""  <url><loc>{BASE}/episodes/</loc><lastmod>{latest}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>"""]
-    if ENGINES:
-        urls.append(f"  <url><loc>{BASE}/engines/</loc><lastmod>{max(g['modified'] for g in ENGINES)}</lastmod><priority>0.8</priority></url>")
-        urls += [f"  <url><loc>{g['url']}</loc><lastmod>{g['modified']}</lastmod><priority>0.8</priority></url>" for g in ENGINES]
+    for kind, items in GUIDES.items():
+        if items:
+            urls.append(f"  <url><loc>{BASE}/{kind}/</loc><lastmod>{max(g['modified'] for g in items)}</lastmod><priority>0.8</priority></url>")
+            urls += [f"  <url><loc>{g['url']}</loc><lastmod>{g['modified']}</lastmod><priority>0.8</priority></url>" for g in items]
     if GLOSSARY:
         urls.append(f"  <url><loc>{BASE}/glossary/</loc><lastmod>{GLOSSARY['modified']}</lastmod><priority>0.7</priority></url>")
     for x in EPISODES:
@@ -795,8 +834,9 @@ def llms(full=False):
              "## Episodes (full car stories)", ""]
     for x in EPISODES:
         lines.append(f"- [{x['seo_title']}]({x['url']}): {x['seo_desc']}")
-    if ENGINES:
-        lines += ["", "## Engine guides", ""] + [f"- [{g['title']}]({g['url']}): {g['description']}" for g in ENGINES]
+    for kind, items in GUIDES.items():
+        if items:
+            lines += ["", f"## {KINDS[kind]['h1']}", ""] + [f"- [{g['title']}]({g['url']}): {g['description']}" for g in items]
     if GLOSSARY:
         lines += ["", "## Glossary", "", f"- [{GLOSSARY['title']}]({BASE}/glossary/): {GLOSSARY['description']}"]
     if not full:
@@ -846,12 +886,14 @@ def main():
         d.mkdir(exist_ok=True)
         (d / "index.html").write_text(episode_page(x, older, newer), encoding="utf-8")
 
-    if ENGINES:
-        (ROOT / "engines").mkdir(exist_ok=True)
-        (ROOT / "engines/index.html").write_text(engines_index(), encoding="utf-8")
-        for g in ENGINES:
-            (ROOT / "engines" / g["slug"]).mkdir(exist_ok=True)
-            (ROOT / "engines" / g["slug"] / "index.html").write_text(engine_page(g), encoding="utf-8")
+    for kind, items in GUIDES.items():
+        if not items:
+            continue
+        (ROOT / kind).mkdir(exist_ok=True)
+        (ROOT / kind / "index.html").write_text(guide_index(kind), encoding="utf-8")
+        for g in items:
+            (ROOT / kind / g["slug"]).mkdir(exist_ok=True)
+            (ROOT / kind / g["slug"] / "index.html").write_text(guide_page(g), encoding="utf-8")
     if GLOSSARY:
         (ROOT / "glossary").mkdir(exist_ok=True)
         (ROOT / "glossary/index.html").write_text(glossary_page(GLOSSARY), encoding="utf-8")
@@ -859,7 +901,7 @@ def main():
     (ROOT / "robots.txt").write_text(ROBOTS, encoding="utf-8")
     (ROOT / "llms.txt").write_text(llms(), encoding="utf-8")
     (ROOT / "llms-full.txt").write_text(llms(full=True), encoding="utf-8")
-    print(f"Built home, {len(EPISODES)} episode pages, {len(ENGINES)} engine guides, glossary={bool(GLOSSARY)}, sitemap, robots, llms.txt")
+    print(f"Built home, {len(EPISODES)} episode pages, {', '.join(f"{len(v)} {k}" for k, v in GUIDES.items())} guides, glossary={bool(GLOSSARY)}, sitemap, robots, llms.txt")
 
 
 if __name__ == "__main__":
